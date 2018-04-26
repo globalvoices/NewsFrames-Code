@@ -1,0 +1,5 @@
+$('#checklists .lists').html('<%= escape_javascript(render('checklists/list', checklists_form: checklists_form)) %>');
+
+<% if @errors.present? %>
+$('#checklists .errors-placeholder').html('<%= escape_javascript(render('shared/errors', errors: @errors)) %>');
+<% end %>

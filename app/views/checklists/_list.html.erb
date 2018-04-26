@@ -1,0 +1,55 @@
+<div class="spacing-2-v">
+  <h2 class="h4 margin-reset"><%= t('checklists.list.heading') %></h2>
+</div>
+
+<%= render 'report' %>
+
+<% if checklists_form.present? %>
+  <%= form_for checklists_form, as: :collaborator_checklist, url: check_project_checklists_path(project), remote: true, method: :put do |f| %>
+    <div class="panel-group" role="tablist" aria-multiselectable="true">
+      <% for checklist, i in checklists_form.checklists.each_with_index do %>
+        <div class="panel panel-secondary">
+          <div class="panel-heading" role="tab button" data-toggle="collapse" data-parent=".panel-group" href="#<%= dom_id(checklist) %>">
+            <h4 class="panel-title">
+              <label aria-expanded="true" role="button">
+                <% if policy(project).checklist_report? %>
+                  <%= checklist.with_translation_in_current_locale.name %> (<%= checklist.progress.round(2) %>% <%= t('checklists.list.complete') %>, <%= checklist.project_checklist.progress.round(2) %>% <%= t('checklists.list.complete_across_team') %>)
+                <% else %>
+                  <%= checklist.with_translation_in_current_locale.name %> (<%= checklist.progress.round(2) %>% <%= t('checklists.list.complete') %>)
+                <% end %>
+              </label>
+            </h4>
+          </div> <!-- ./panel-heading -->
+
+          <div id="<%= dom_id(checklist) %>" class="panel-collapse collapse <%= i == 0 ? 'in' : '' %>" role="tabpanel">
+            <div class="panel-body">
+              <fieldset <% unless policy(checklist).check_item? %>disabled<% end %>>
+                <%= f.collection_check_boxes :selected_checklist_items, checklist.items.sort_by(&:created_at), :id, :item_with_translation_in_current_locale do |entry| %>
+                  <p>
+                    <div class="flex">
+                      <label class="flex-1">
+                        <%= entry.check_box class: 'input-checkbox' %>
+                        <%= entry.label class: 'input-checkbox-label' %>
+                      </label>
+
+                      <% if entry.object.help_with_translation_in_current_locale.present? %>
+                        <a href="#" data-toggle="tooltip" data-html="true" data-container="body" data-trigger="manual" title="<%= entry.object.help_with_translation_in_current_locale %>" class="info-checkbox">
+                          <span class="glyphicon glyphicon-info-sign"></span>
+                        </a>
+                      <% end %>
+                    </div>
+                  </p>
+                <% end %>
+              </fieldset>
+            </div> <!-- ./panel-body -->
+          </div> <!-- ./panel-collapse -->
+        </div> <!-- ./panel -->
+      <% end %>
+    </div> <!-- ./panel-group -->
+
+    <div class="form-group text-center">
+      <%= f.button t('checklists.list.submit_button'), type: 'submit', class: 'btn btn-primary' %>
+    </div>
+
+  <% end %>
+<% end %>

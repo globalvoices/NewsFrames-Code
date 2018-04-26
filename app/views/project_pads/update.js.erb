@@ -1,0 +1,5 @@
+<% if @project_pad.errors.present? %>
+$('#modal .errors-placeholder').html('<%= escape_javascript(render('shared/errors', errors: @project_pad.errors)) %>');
+<% else %>
+<%= render 'etherpad', project_pad: @project_pad %>
+<% end %>

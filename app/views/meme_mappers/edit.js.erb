@@ -1,0 +1,6 @@
+(function () {
+  $('#modal .modal-header .heading').text('<%= escape_javascript(t("tools.meme_mapper.save_search")) %>');
+
+  var container = $('#modal .main');
+  container.html('<%= escape_javascript(render('meme_mappers/edit')) %>');
+})();

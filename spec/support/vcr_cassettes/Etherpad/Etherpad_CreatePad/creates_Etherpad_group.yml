@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createGroup
+    body:
+      encoding: UTF-8
+      string: apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '65'
+      Etag:
+      - W/"41-8mSXStrG4JSaaBH2dvWPrg"
+      Set-Cookie:
+      - express_sid=s%3A_lUSZo0yzcbev2HDCl-6Fx0gzYWu8Rjf.ogxhsEeGOU7EBKyJwVK3DplTOCnFhuBo%2FpLMoKCiRJQ;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"groupID":"g.gjYkZCh4l01oUQaY"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createGroupPad
+    body:
+      encoding: UTF-8
+      string: groupID=g.gjYkZCh4l01oUQaY&padName=3932ae65-c27c-4178-8178-adb811ca5f26&text&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '96'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '100'
+      Etag:
+      - W/"64-RYiZJzmOPELcgcyyTCDGng"
+      Set-Cookie:
+      - express_sid=s%3AuDkLDtAw31iOAs01lLkiKoNVnA53kG0r.m55p62s2r%2FLA2xjZRH7Pokf9UG0giOaEWI%2FgZeoZbRc;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"padID":"g.gjYkZCh4l01oUQaY$3932ae65-c27c-4178-8178-adb811ca5f26"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+recorded_with: VCR 3.0.3

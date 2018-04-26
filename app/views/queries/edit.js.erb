@@ -1,0 +1,6 @@
+(function () {
+  $('#modal .modal-header .heading').text('<%= escape_javascript(t("tools.media_cloud.save_search")) %>');
+
+  var container = $('#modal .main');
+  container.html('<%= escape_javascript(render('queries/edit')) %>');
+})();

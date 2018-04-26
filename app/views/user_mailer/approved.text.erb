@@ -1,0 +1,6 @@
+<%= render 'shared/mailer/greeting', user: @user %>
+<%= t('users.mail.approved.welcome') %>
+
+<%= t('users.mail.approved.sign_in', link: new_user_session_url) %>
+
+<%= render 'shared/mailer/closing' %>

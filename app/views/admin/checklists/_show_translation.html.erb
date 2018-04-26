@@ -1,0 +1,81 @@
+<div class="panel">
+  <h3>Checklist Details (<%= @language %>)</h3>
+  <div class="panel-contents">
+    <div class="attributes_table">
+      <table>
+        <tr class="row">
+          <td>
+            Checklist ID
+          </td>
+          <td>
+            <%= @original_checklist.id %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Checklist Language
+          </td>
+          <td>
+            <%= @language %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Checklist Translation ID
+          </td>
+          <td>
+            <%= @checklist.id %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Name
+          </td>
+          <td>
+            <%= @checklist.name %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Created At
+          </td>
+          <td>
+            <%= @checklist.created_at %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Updated At
+          </td>
+          <td>
+            <%= @checklist.updated_at %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Items
+          </td>
+          <td>
+            <div class="attributes_table">
+              <table>
+                <tr class="row">
+                  <td></td>
+                  <td><b>Item</b></td>
+                  <td><b>Help</b></td>
+                </tr>
+                <% @checklist_items.each do |entry| %>
+                  <tr class="row">
+                    <td>&#9989;</td>
+                    <td><%= entry.item %></td>
+                    <td><%= entry.help.html_safe if entry.help.present? %></td>
+                  </tr>
+                <% end %>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<%= button_to('Back', admin_checklist_path(checklist_id: @original_checklist.id), { method: :get }) %>

@@ -1,0 +1,63 @@
+<div class="sidebar">
+  <ul class="nav nav-pills" role="tablist">
+    <% if @project.checklists.empty? %>
+      <li role="presentation" class="active">
+    <% else %>
+      <li role="presentation">
+    <% end %>
+    <%= link_to t('projects.show.tools.media_cloud'), new_project_query_path(@project), id: 'mediacloud-tab-link', remote: true, data: { toggle: 'tab', target: '#mediacloud-tab' } %>
+      </li>
+
+      <li role="presentation">
+        <a href="#biasdetector-tab" aria-controls="biasdetector-tab" role="tab" data-toggle="tab"><%= t('projects.show.tools.bias_detector') %></a>
+      </li>
+
+      <li role="presentation">
+        <%= link_to t('projects.show.tools.meme_mapper'), new_project_meme_mapper_path(@project), id: 'mememapper-tab-link', remote: true, data: { toggle: 'tab', target: '#mememapper-tab' } %>
+      </li>
+
+    <% if @project.checklists.present? %>
+      <li role="presentation" class="active">
+        <a href="#checklists-tab" aria-controls="checklists-tab" role="tab" data-toggle="tab">
+          <%= t('projects.show.tools.checklist') %>
+          <span class="badge bg-alert">
+            <%= presenter.checklist_count %>
+          </span>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tab-content">
+    <% if @project.checklists.empty? %>
+      <div role="tabpanel" class="tab-pane active" id="mediacloud-tab">
+    <% else %>
+      <div role="tabpanel" class="tab-pane" id="mediacloud-tab">
+    <% end %>
+        <div id="mediacloud">
+          <div class="errors-placeholder"></div>
+          <div class="content-placeholder"></div>
+        </div>
+      </div>
+
+    <div role="tabpanel" class="tab-pane" id="biasdetector-tab">
+      <%= render 'tools/detect_bias' %>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="mememapper-tab">
+      <div id="mememapper">
+        <div class="errors-placeholder"></div>
+        <div class="content-placeholder"></div>
+      </div>
+    </div>
+
+    <% if @project.checklists.present? %>
+      <div role="tabpanel" class="tab-pane active" id="checklists-tab">
+        <div id="checklists">
+          <div class="errors-placeholder"></div>
+          <div class="lists"></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div> <!-- /.sidebar -->

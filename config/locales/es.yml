@@ -1,0 +1,66 @@
+es:
+  attributes:
+    updated_at: "Fecha de la última modificación"
+  activerecord:
+    models:
+      collaborator:
+        zero: "Colaboradores"
+        one: "Colaborador"
+        other: "Colaboradores"
+      project:
+        zero: "Proyectos"
+        one: "Proyect"
+        other: "Proyectos"
+      user:
+        zero: "Usuarios"
+        one: "Usuario"
+        other: "Usuarios"
+    attributes:
+      collaborator:
+        lead: "Capitán"
+      project:
+        name: "Nombre"
+      user:
+        admin: "Administrador"
+        approved: "Aprobado"
+        email: "Correo electrónico"
+        name: "Nombre"
+        password: "Contraseña"
+        password_confirmation: "Contraseña confirmation"
+        current_password: "Contraseña Actual"
+        language: "Idioma"
+  date:
+    formats:
+      default: "%b %d %Y"
+      short: "%b %d"
+      long: "%B %d %Y"
+  time:
+    formats:
+      default: "%b %d %Y %H:%M"
+      short: "%b %d %H:%M"
+      long: "%A, %B %d %Y %H:%M"
+      time_only: "%H:%M"
+  general:
+    title: "Bienvenido a Global Voices NewsFrames"
+    heading: "NewsFrames"
+    back: 'Espalda'
+    update: 'Actualizar'
+  landing:
+    welcome_user: "Bienvenidos %{name}"
+    welcome_anonymous: "Bienvenido a Global Voices"
+  menu:
+    contact: "Contacto"
+    projects: "Proyectos"
+    profile: "Perfil"
+    sign_out: "Cerrar sesión"
+    log_in: "Iniciar sesión"
+    sign_up: "Regístrate"
+    admin: "Admin"
+  mail:
+    thanks: "Gracias,"
+    from: "Equipo \"NewsFrames\""
+  users:
+    profile:
+      need_current_password: "necesitamos su contraseña actual para confirmar sus cambios"
+      leave_password_blank: "deje en blanco si no desea cambiarlo"
+      edit_profile_title: "Editar Usuario"

@@ -1,0 +1,14 @@
+(function () {
+  $('#modal').modal('hide');
+
+  var container = $('#mememapper .content-placeholder');
+  container.html('<%= escape_javascript(render('index')) %>');
+
+  container.find('a').bind('ajax:beforeSend', function () {
+    container.find('.spinning').removeClass('hide');
+  });
+
+  container.find('a').bind('ajax:complete', function () {
+    container.find('.spinning').addClass('hide');
+  });
+})();

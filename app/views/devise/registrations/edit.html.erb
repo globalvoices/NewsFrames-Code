@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+    <h1><%= t('users.profile.edit_profile_title') %></h1>
+    <hr>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :initials, 'Initials/nickname' %><br />
+        <%= f.text_field :initials, class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :language %>
+        <%= f.select :language, available_languages %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %> <i>(<%= t('users.profile.leave_password_blank') %>)</i><br />
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :current_password %> <i>(<%= t('users.profile.need_current_password') %>)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit t('general.update'), class: 'btn btn-lg btn-block btn-primary' %>
+      </div>
+    <% end %>
+    <hr>
+    <div class="text-center">
+      <%= link_to :back, :class => 'font-bold' do %>
+        <span class="fa fa-arrow-left icon-left-sm"></span>
+        <span><%= t('general.back') %></span>
+      <% end %>
+    </div>
+    <hr>
+  </div>
+</div>

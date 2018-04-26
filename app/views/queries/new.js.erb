@@ -1,0 +1,14 @@
+(function () {
+  var container = $('#mediacloud .content-placeholder');
+  container.html('<%= escape_javascript(render('new')) %>');
+
+  var form = container.find('form');
+
+  form.on('submit', function (e) {
+    $(this).find('.spinning').removeClass('hide');
+
+    var button = $(this).find('button');
+    button.attr('disabled', true);
+    button.find('.text').text('<%= escape_javascript(t("tools.media_cloud.fetching")) %>');
+  });
+})();

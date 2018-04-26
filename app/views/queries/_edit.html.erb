@@ -1,0 +1,19 @@
+<%= form_for [project, query], remote: true do |f| %>
+  <div class="modal-body">
+    <div class="errors-placeholder"></div>
+
+    <%= render 'shared/errors', errors: query.errors %>
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "e.g #{presenter.query_label}", class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="form-group">
+      <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('general.close') %></button>
+      <%= f.submit t('tools.media_cloud.save'), class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,129 @@
+fr:
+  locale_name: "Anglais"
+  attributes:
+    created_at: "Date de création"
+    updated_at: "Dernière modification"
+  activerecord:
+    models:
+      collaborator:
+        zero: "Collaborateurs"
+        one: "Collaborateur"
+        other: "Collaborateurs"
+      project:
+        zero: "Projets"
+        one: "Projet"
+        other: "Projets"
+      user:
+        zero: "Utilisateurs"
+        one: "Utilisateur"
+        other: "Utilisateurs"
+    attributes:
+      collaborator:
+        lead: "Chef de projet"
+      project:
+        name: "Nom"
+      user:
+        admin: "Administrateur"
+        approved: "Validé"
+        email: "E-mail"
+        name: "Nom"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation mot de passe"
+        current_password: "Mot de passe actuel"
+        language: "La langue"
+  date:
+    formats:
+      default: "%b %d %Y"
+      short: "%b %d"
+      long: "%B %d %Y"
+  time:
+    formats:
+      default: "%b %d %Y %H:%M"
+      short: "%b %d %H:%M"
+      long: "%A, %B %d %Y %H:%M"
+      time_only: "%H:%M"
+  general:
+    title: "Bienvenue sur Global Voices NewsFrames"
+    heading: "NewsFrames"
+    close: "Fermer"
+    toggle_navigation: "fermer la navigation"
+    back: 'Arrière'
+    update: 'Mettre à jour'
+  landing:
+    welcome_user: "Bienvenue %{name}"
+    welcome_anonymous: "Bienvenue sur Global Voices"
+    intro: |-
+      NewsFrames est un outil pour aider à la recherche et au cadrage des articles d'actualité.
+      Vous pouvez parcourir les exemples de projets ou vous jeter à l'eau et créer le vôtre.
+    read_more: "En savoir plus"
+    read_more_cont: "A propos du projet newsframes"
+  menu:
+    home: "Accueil"
+    about: "A propos"
+    contact: "Contact"
+    projects: "Projets"
+    profile: "Profil"
+    sign_out: "Se déconnecter"
+    log_in: "Se connecter"
+    sign_up: "S'inscrire"
+    admin: "Administrateur"
+  mail:
+    greeting: "Cher, chère %{name}"
+    thanks: "Merci,"
+    from: "L'Equipe NewsFrames"
+    resource_link: "Une fois connecté, %{resource_name} est disponible sur : %{link}"
+    resource_names:
+      admin_dashboard: "le tableau de bord "
+      project: "le projet"
+    invite:
+      accept: "Vous pouvez accepter l'invitation en cliquant sur ce lien : %{link}"
+  collaborators:
+    manage:
+      heading: "Gérer les collaborateurs"
+      loading: "Chargement..."
+      you: "(Vous)"
+      confirm_delete: "Êtes-vous sûr ?"
+      close: "Fermer"
+    invite:
+      heading: "Inviter des collaborateurs"
+      emails_placeholder: "Entrez plusieurs adresses séparées avec des espaces ou virgules"
+      submit_button: "Invitation"
+    mail:
+      invited: "Vous avez été invité-e à collaborer à ce projet de NewsFrames : %{name}"
+  projects:
+    index:
+      lead:
+        heading: "Mes Projets"
+        empty_message: "Vous n'êtes responsable d'aucun projet"
+      shared:
+        heading: "Projets dont je suis membre"
+        empty_message: "Vous n'êtes actuellement membre d'aucun projet."
+      create_button: "Créer un projet"
+    edit:
+      heading: "Modifier un projet"
+    new:
+      heading: "Nouveau projet"
+    show:
+      edit_button: "Modifier"
+      delete_button: "Supprimer"
+      delete_confirm: "Voulez-vous vraiment modifier/supprimer ?"
+      collaborators_button: "Collaborateurs"
+  users:
+    profile:
+      need_current_password: "nous avons besoin de votre mot de passe actuel pour confirmer vos changements"
+      leave_password_blank: "laissez vide si vous ne voulez pas le changer"
+      edit_profile_title: "Modifier l'utilisateur"
+    mail:
+      approved:
+        welcome: "Bienvenue dans notre collectif. Votre compte NewsFrames a été validé."
+        sign_in: "Vouspouvez commencer à utiliser NewsFrames en vous connectant ici %{link}."
+      admin:
+        invite: "Vous êtes invité-e à devenir administrateur NewsFrames."
+        notice: "Vous êtes maintenant un administrateur NewsFrames."
+      registered:
+        welcome: "Bienvenue à NewsFrames!"
+        approved: |-
+          Votre compte a été créé avec succès. Connectez-vous en vous rendant sur %{link}.
+        unapproved: |-
+          Votre compte a été créé avec succès, mais il doit encore être validé avant que vous commenciez à l'utiliser.
+          Nous avons informé l'administrateur système et vous recevrez un e-mail de confirmation dès validation de votre compte.

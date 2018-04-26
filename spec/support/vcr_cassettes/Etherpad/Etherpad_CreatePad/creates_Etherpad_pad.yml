@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createGroup
+    body:
+      encoding: UTF-8
+      string: apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '65'
+      Etag:
+      - W/"41-oOc0eYpAdvPCfb4zG5RV6Q"
+      Set-Cookie:
+      - express_sid=s%3AzElgdZs055zVvi52M1rYnC1AKe2q-XBi.%2BavgJ1dW6jCMd4Xm%2BbUAGzLgFknz8%2FxH4hZfvcoWgAU;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"groupID":"g.7MVkHcAJJVCoaFMu"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createGroupPad
+    body:
+      encoding: UTF-8
+      string: groupID=g.7MVkHcAJJVCoaFMu&padName=8c352162-4c8b-4134-a95b-b43602e2fb00&text&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '96'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '100'
+      Etag:
+      - W/"64-+lmeAcjJDr6wUd9SVcmHCw"
+      Set-Cookie:
+      - express_sid=s%3AJag-ofve_oy8S1q8XZBLK68AMbKnqclC.bB3pH3RiGI6fFlWBydiUdTMkPdjaI1FOJnCfXrZzR1c;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"padID":"g.7MVkHcAJJVCoaFMu$8c352162-4c8b-4134-a95b-b43602e2fb00"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createPad
+    body:
+      encoding: UTF-8
+      string: padID=g.7MVkHcAJJVCoaFMu%248c352162-4c8b-4134-a95b-b43602e2fb00&text&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '88'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '68'
+      Etag:
+      - W/"44-TH6EqKMAlq5jePRDIHs+hw"
+      Set-Cookie:
+      - express_sid=s%3A4Ir6yCUYfBWao9WJ_reHqXtO8Q3E7RSW.KndklQNEtOZf1CnWjP5Q9Q0LWnUQkskB%2F3G0fyEJrs4;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":1,"message":"createPad can''t create group pads","data":null}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+recorded_with: VCR 3.0.3

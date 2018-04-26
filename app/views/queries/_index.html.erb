@@ -1,0 +1,29 @@
+<div class="spacing-v"></div>
+<div class="pull-right">
+  <%= link_to new_project_query_path(project), remote: true do %>
+    <span class="fa fa-close trigger-close-searches"></span>
+  <% end %>
+</div>
+
+<h2 class="h4"><%= t('tools.media_cloud.heading') %></h2>
+<div class="spacing-half-v"></div>
+<h3 class="h5"><%= t('tools.media_cloud.saved_searches') %></h3>
+
+<table class="table table-hover table-striped table-bordered">
+  <tbody>
+    <% for query in @queries do %>
+      <tr>
+        <td>
+          <%= query.created_at %>
+        </td>
+        <td>
+          <%= link_to QueryPresenter.new(query).query_label, project_query_path(project, query), remote: true %>
+        </td>
+        <td>
+          <%= link_to t('tools.media_cloud.edit'), edit_project_query_path(project, query), remote: true, data: { toggle: 'modal', target: '#modal' } %>
+          <%= link_to t('tools.media_cloud.delete'), project_query_path(project, query), method: :delete, remote: true, data: { confirm: t('tools.media_cloud.confirm') } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

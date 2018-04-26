@@ -1,0 +1,36 @@
+<div class="flex flex-wrap spacing-2-v">
+  <h2 class="h4 margin-reset"><%= t('tools.meme_mapper.heading') %></h2>
+  <ul class="list-unstyled clearfix list-mc-searches">
+    <li class="pull-right font-size-sm">
+      <%= link_to t('tools.meme_mapper.saved_searches'), project_meme_mappers_path(project), class: '', remote: true %>
+      <span>|</span>
+      <a href="https://tineye.com" target="_blank">
+        <%= image_tag 'logos/tineye-logo.jpg', alt: '', width: '32' %>
+        <span class="fa fa-external-link"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<%= form_for [project, @meme_mapper], remote: true do |f| %>
+  <%= render 'shared/errors', errors: @meme_mapper.errors %>
+
+  <%= f.label :image_url, t('tools.meme_mapper.image_url') %>
+  <div class="form-group flex row-sm flex-align-center">
+    <div class="gutter-sm flex-1">
+      <%= f.text_field :image_url, class: 'form-control' %>
+    </div>
+    <div class="gutter-sm">
+      <button class="btn btn-primary">
+        <i class="glyphicon glyphicon-refresh spinning hide"></i>
+        <span class="text"><%= t('tools.meme_mapper.submit') %></span>
+      </button>
+    </div>
+  </div>
+<% end %>
+
+<div class="well">
+  <p>
+    Into the textbox above, enter the URL of an image you would like to reverse image search. Learn more about our Meme Mapping effort <a href="https://newsframes.globalvoices.org/tools/using-meme-mapper/">here</a>.
+  </p>
+</div>

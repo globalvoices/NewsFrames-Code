@@ -1,0 +1,9 @@
+<%= render 'shared/mailer/greeting', user: @user %>
+<%= t('collaborators.mail.invited', name: @project.name) %>
+<% if @invitation_token.present? %>
+<%= t('mail.invite.accept', link: accept_invitation_url(@user, invitation_token: @invitation_token)) %>
+<% end %>
+
+<%= t('mail.resource_link', resource_name: t('mail.resource_names.project'), link: project_url(@project)) %>
+
+<%= render 'shared/mailer/closing' %>

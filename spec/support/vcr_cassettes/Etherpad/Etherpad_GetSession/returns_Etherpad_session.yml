@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createAuthor
+    body:
+      encoding: UTF-8
+      string: name=d0618934-c46e-40ab-9a72-c1d6a2a9e92d&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '61'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '66'
+      Etag:
+      - W/"42-QrXu+ghPOam9jtSEF+6zyw"
+      Set-Cookie:
+      - express_sid=s%3A1t34Y4tff9NbtgdHxLNUSxPTd6h0UDEH.QLbCRzqqLpdfKm7RD7FM6yEpdyuMWTrSzG00gSolTqQ;
+        Path=/; HttpOnly
+      Date:
+      - Thu, 27 Apr 2017 20:38:23 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"authorID":"a.O1SNAXBszJyndDCs"}}'
+    http_version:
+  recorded_at: Thu, 27 Apr 2017 20:38:23 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createGroup
+    body:
+      encoding: UTF-8
+      string: apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '65'
+      Etag:
+      - W/"41-5SreZH21y3w7Rs2ru/Qmow"
+      Set-Cookie:
+      - express_sid=s%3ANmDBf63IQhFokk4xfkbhl1_Y93eT4-5q.YPiA582xvvlbvrryCFkSLWvxv3cmf0gBKoXY3iUpBig;
+        Path=/; HttpOnly
+      Date:
+      - Thu, 27 Apr 2017 20:38:23 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"groupID":"g.foPvkjj3LZHo3Wsm"}}'
+    http_version:
+  recorded_at: Thu, 27 Apr 2017 20:38:23 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createSession
+    body:
+      encoding: UTF-8
+      string: groupID=g.foPvkjj3LZHo3Wsm&authorID=a.O1SNAXBszJyndDCs&validUntil=1493329103&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '96'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '83'
+      Etag:
+      - W/"53-hkEid27HvgPrw4C9rGK2vA"
+      Set-Cookie:
+      - express_sid=s%3AjiyXaHTfWLLld919CJUpjsvxV_KSzCPL.eLwU1y8VniDSzsc%2BrYyLzXb24d4%2F4YBdvU0ELX%2BsHW8;
+        Path=/; HttpOnly
+      Date:
+      - Thu, 27 Apr 2017 20:38:23 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"sessionID":"s.1a5f17233420911e186558c6b5a6535c"}}'
+    http_version:
+  recorded_at: Thu, 27 Apr 2017 20:38:23 GMT
+- request:
+    method: get
+    uri: http://localhost:9001/api/1.2.1/getSessionInfo?apikey=test-api-key&sessionID=s.1a5f17233420911e186558c6b5a6535c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '121'
+      Etag:
+      - W/"79-MAXaQF/XIWmPC2tyULdL4Q"
+      Set-Cookie:
+      - express_sid=s%3AXFJJ9tiqL-JbvvGHYSYkHV6TGmLMzxQm.ssRDl1wkEy1BWp6P%2FBEsqL%2Bh8KYTnDQA6GRjsVxKAAE;
+        Path=/; HttpOnly
+      Date:
+      - Thu, 27 Apr 2017 20:38:23 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"groupID":"g.foPvkjj3LZHo3Wsm","authorID":"a.O1SNAXBszJyndDCs","validUntil":1493329103}}'
+    http_version:
+  recorded_at: Thu, 27 Apr 2017 20:38:23 GMT
+recorded_with: VCR 3.0.3

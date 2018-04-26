@@ -1,0 +1,85 @@
+<%= render 'shared/errors', errors: @errors || @form.errors %>
+
+<div class="form-group">
+  <label for="name"><%= t('projects.form.name') %></label>
+  <%= f.text_field :name, class: 'form-control' %>
+</div>
+
+<div class="spacing-v">
+  <%= f.check_box :public, class: 'input-checkbox', id: 'project-public' %>
+  <label class="input-checkbox-label" for="project-public"><%= t('projects.form.public') %></label>
+</div>
+
+<% if policy(Checklist).index? or @form.project.try(:new_record?) %>
+  <div class="form-group">
+    <label><%= t('projects.form.checklists') %></label>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <%= f.collection_check_boxes :selected_checklists, @form.global_checklists, :id, :name do |item| %>
+        <% presenter = @form.checklist_presenters[item.value] %>
+        <% if presenter.enabled or presenter.attached %>
+          <div class="panel panel-secondary">
+            <div class="panel-heading" role="tab" id="headingOne<%= item.value %>">
+              <h4 class="panel-title">
+                <%= item.check_box %>
+                <label for="project-demo-1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne<%= item.value %>" aria-expanded="true" aria-controls="collapseOne<%= item.value %>" role="button">
+                  <%= item.label %> <small>(<i><%= presenter.global_name %>, <%= DateTime.strptime(presenter.created_at.to_s,'%Y-%m-%d %H:%M:%S %Z').strftime('%Y-%m-%d %Z') %>, <%= presenter.enabled ? 'enabled' : 'disabled' %></i>)</small>
+                </label>
+              </h4>
+            </div>
+            <div id="collapseOne<%= item.value %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne<%= item.value %>">
+              <div class="panel-body">
+                <% @form.checklist_items[item.value].each do |entry| %>
+                  <p>
+                    <span class="fa fa-check gray-steel"></span> <%= entry[:item] %>
+                    <% if entry[:help].present? %>
+                      <a href="#" class="info-checkbox" data-toggle="tooltip" data-html="true" data-container="body" data-trigger="manual" title="<%= entry[:help] %>">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                      </a>
+                    <% end %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div> <!-- /.panel -->
+      <% end %>
+
+      <%= f.collection_check_boxes :zombie_checklists, @form.deleted_global_checklists, :id, :name do |item| %>
+        <div class="panel panel-secondary">
+          <div class="panel-heading" role="tab" id="headingTwo<%= item.value %>">
+            <h4 class="panel-title">
+              <%= item.check_box %>
+              <label for="project-demo-2" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo<%= item.value %>" aria-expanded="true" aria-controls="collapseTwo<%= item.value %>" role="button">
+                <%= item.label %> <small class='text-danger'>(*<%= t('projects.form.zombie_checklist_message') %>)</small>
+              </label>
+            </h4>
+          </div>
+          <div id="collapseTwo<%= item.value %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo<%= item.value %>">
+            <div class="panel-body">
+              <% @form.zombie_checklist_items[item.value].each do |entry| %>
+                <p>
+                  &#x2713; <%= entry[:item] %>
+                  <% if entry[:help].present? %>
+                    <a href="#" data-toggle="tooltip" data-html="true" title="<%= entry[:help] %>">
+                      <span class="glyphicon glyphicon-info-sign"></span>
+                    </a>
+                  <% end %>
+                </p>
+              <% end %>
+            </div>
+          </div>
+        </div> <!-- /.panel -->
+      <% end %>
+    </div> <!-- ./panel-group -->
+  </div>
+
+  <div class="form-group text-center">
+    <span class="spacing-half-h">
+      <%= link_to t('projects.form.cancel'), :back, class: "btn btn-dull--light" %>
+    </span>
+    <span class="spacing-half-h">
+      <%= f.button defined?(submit_text) ? submit_text : t('projects.form.submit'), type: 'submit', class: "btn btn-primary" %>
+    </span>
+  </div>
+<% end %>

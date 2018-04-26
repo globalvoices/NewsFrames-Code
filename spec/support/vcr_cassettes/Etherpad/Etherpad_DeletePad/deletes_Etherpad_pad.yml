@@ -1,0 +1,239 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createGroup
+    body:
+      encoding: UTF-8
+      string: apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '65'
+      Etag:
+      - W/"41-q+QsVWuwpcjRquqCqX8HVg"
+      Set-Cookie:
+      - express_sid=s%3Am_iODHG-JHNzwWgZIdHFjCT30sdWNv_v.23AyxjjXU1KukCdbGI5YAyPi9EuCukb3lYJg%2Fu3FSrc;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"groupID":"g.nVjuKt6esgcWn91v"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createGroupPad
+    body:
+      encoding: UTF-8
+      string: groupID=g.nVjuKt6esgcWn91v&padName=test&text&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '64'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '68'
+      Etag:
+      - W/"44-XZAQ/CslTD0n4J8/indhMw"
+      Set-Cookie:
+      - express_sid=s%3AQsPFJmHfN4K50Rm34A5W5BlcSTv1uDMW.nB%2Fx8iXZ%2FarHkQTbKXVIZf7W5WtGJNOrqncRxP980Ts;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"padID":"g.nVjuKt6esgcWn91v$test"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/deletePad
+    body:
+      encoding: UTF-8
+      string: padID=g.nVjuKt6esgcWn91v%24test&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '37'
+      Etag:
+      - W/"25-iqtPeha0gUf1XiohbX2EjA"
+      Set-Cookie:
+      - express_sid=s%3Ab1AE4HMZTxC9vC3fAU-8qM79OFgjfy4j.pBOMqiVjZXrAVwPGRpqp0m5qAsVLTzkM8UjIIs8vpIo;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":null}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/deleteGroup
+    body:
+      encoding: UTF-8
+      string: groupID=g.nVjuKt6esgcWn91v&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '46'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '37'
+      Etag:
+      - W/"25-iqtPeha0gUf1XiohbX2EjA"
+      Set-Cookie:
+      - express_sid=s%3AnQML6luWyvHaEKpUbwEqj0USSy3A-r_Q.Tr%2BJ0CAe3C5pWaqOFwRi0bnJR7DS%2FvbxAHiCk9G0LCU;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":null}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: get
+    uri: http://localhost:9001/api/1.2.1/getText?apikey=test-api-key&padID=g.nVjuKt6esgcWn91v$test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '55'
+      Etag:
+      - W/"37-Hdd6/G4ZFokB1bY78pHDZA"
+      Set-Cookie:
+      - express_sid=s%3AEnhGuJAw7cliX4mHAzA2rcqXGaGxnaFm.3vNPnfGQoOCyDJTRC6ItvtlT5rz1Q1BgIPZk32jqQ5Q;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":1,"message":"padID does not exist","data":null}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,76 @@
+<% content_for :body_class, "body-full-screen" %>
+
+<% content_for :head do %>
+
+  <% if policy(@project).collaborate? %>
+    <script>
+     $(function () {       
+      <% if @project.checklists.present? %>
+        $.getScript('<%= j project_checklists_path(@project) %>');
+      <% else %>
+        $.getScript('<%= j new_project_query_path(@project) %>');
+      <% end %>    
+     });
+    </script>
+  <% end %>
+  <script>
+    $(function(){
+      // Toggle width of etherpad and sidebar to 50%
+      $(".js-toggle-width-half").on("click", function(e){
+        e.preventDefault();
+        $(this).toggleClass('toggle-width-half--compress');
+        $('.sidebar-wrap-flex').removeClass("js-sidebar-width-tool js-sidebar-width-etherpad").toggleClass('js-sidebar-width-half');
+        $('.etherpad-wrap-flex').removeClass("js-etherpad-width-tool js-etherpad-width-etherpad").toggleClass('js-etherpad-width-half');
+      });
+
+      // Toggle width of sidebar
+      $(".js-toggle-width-tool").on("click", function(e){
+        e.preventDefault();
+        $('.sidebar-wrap-flex').removeClass("js-sidebar-width-half js-sidebar-width-etherpad").toggleClass('js-sidebar-width-tool');
+        $('.etherpad-wrap-flex').removeClass("js-etherpad-width-half js-etherpad-width-etherpad").toggleClass('js-etherpad-width-tool');
+      });
+
+      // Toggle width of etherpad
+      $(".js-toggle-width-etherpad").on("click", function(e){
+        e.preventDefault();
+        //$(this).toggleClass('toggle-width-etherpad--compress');
+        $('.sidebar-wrap-flex').removeClass("js-sidebar-width-half js-sidebar-width-tool").toggleClass('js-sidebar-width-etherpad');
+        $('.etherpad-wrap-flex').removeClass("js-etherpad-width-half js-etherpad-width-tool").toggleClass('js-etherpad-width-etherpad');
+      });
+
+      // show etherpad
+      $.getScript('<%= j project_pads_path(@project) %>');   
+    });
+  </script>
+
+<% end %>
+
+<% content_for :body do %>
+  <%= render 'shared/modal' %>
+<% end %>
+
+<div class="clearfix container-etherpad">
+  <% if policy(@project).collaborate? %>
+    <div class="col-sm-8 etherpad-wrap-flex">
+  <% else %>
+    <div class="col-sm-12 etherpad-wrap-flex">
+  <% end %>
+      <div>
+        <%= render 'header' %>
+        <hr>
+        <div id="etherpad-frame">
+        </div>
+      </div>
+    </div> <!-- /.col -->
+
+  <% if policy(@project).collaborate? %>
+    <div class="col-sm-4 sidebar-wrap sidebar-wrap-flex">
+      <div class="toggle-panel-icon-wrap">
+        <a href="" class="fa toggle-panel-icon toggle-width-half js-toggle-width-half"></a>
+        <a href="" class="fa toggle-panel-icon toggle-width-tool js-toggle-width-tool"></a>
+        <a href="" class="fa toggle-panel-icon toggle-width-etherpad js-toggle-width-etherpad"></a>
+      </div>
+      <%= render 'sidebar' %>
+    </div> <!-- /.col -->
+  <% end %>
+</div> <!-- /.container-etherpad -->

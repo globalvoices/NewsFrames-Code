@@ -1,0 +1,28 @@
+<div class="etherpad-title-block flex flex-align-baseline">
+  <h1 class="h2">
+    <span class="fa fa-file-text project-title-icon"></span>
+    <span><%= @project.name %></span>
+  </h1>
+  <span class="spacing-h"></span>
+
+  <% if policy(@project).edit? %>
+    <%= link_to edit_project_path(@project), :class => 'btn btn-link' do %>
+      <span class="fa fa-pencil"></span>
+      <%= t('projects.show.edit_button') %>
+    <% end %>
+  <% end %>
+
+  <% if policy(@project).destroy? %>
+    <%= link_to project_path(@project), method: :delete, data: { confirm: t('projects.show.delete_confirm') }, :class => 'btn btn-link' do %>
+      <span class="fa fa-close"></span>
+      <%= t('projects.show.delete_button') %>
+    <% end %>
+  <% end %>
+
+  <% if policy(@project).collaborate? %>
+    <%= link_to project_collaborators_path(@project), remote: true, data: { toggle: 'modal', target: '#modal' }, :class => 'btn btn-link' do %>
+      <span class="fa fa-users"></span>
+      <%= t('projects.show.collaborators_button') %>
+    <% end %>
+  <% end %>
+</div>

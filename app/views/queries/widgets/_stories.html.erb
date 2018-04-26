@@ -1,0 +1,36 @@
+<div class="well">
+  <div class="clearfix flex flex-wrap flex-align-center spacing-v">
+    <div><strong>Mentions: Stories Matching</strong></div>
+    <div class="dropdown dropdown-media-frequency">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-cog"></span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li class="dropdown-header"><em><%= t('tools.media_cloud.max_stories_notice') %></em></li>
+        <% for name, index in presenter.frequency_options %>
+          <li><%= link_to "Download #{name} data CSV", project_query_path(project, query, filter: { stories: index }, format: :csv) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <% for results, i in presenter.query_data(:stories).each_with_index do %>
+    <h3 class="h5"><%= presenter.query_names[i] %>: A sampling of stories</h3>
+
+    <ul class="list-group list-group--brand">
+      <% for result in results[slice] do %>
+        <li class="list-group-item">
+          <p class="list-group-title flex row-sm"><%= link_to result['media_name'], result['media_url'], class: 'font-bold gutter-sm', target: '_blank' %>
+
+          <span class="list-group-date font-size-xs gutter-sm">
+            <%= DateTime.parse(result['publish_date']).strftime('%m/%d/%Y') %>
+          </span>
+
+          </p>
+          <%= link_to result['title'], result['url'], target: '_blank' %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

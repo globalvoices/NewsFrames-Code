@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createAuthor
+    body:
+      encoding: UTF-8
+      string: name=test&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '29'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '66'
+      Etag:
+      - W/"42-azks1+5/FFzJgcX9Lc/C9g"
+      Set-Cookie:
+      - express_sid=s%3AI-hQHQnVs6owMBrCk5dZgYtfyvBGTZY6.kQz%2BfpEawCLNmVwZbYQyqz78TwiI5V71el7ifahX9BY;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"authorID":"a.JatlfDlHtS4pcVEy"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+- request:
+    method: post
+    uri: http://localhost:9001/api/1.2.1/createAuthorIfNotExistsFor
+    body:
+      encoding: UTF-8
+      string: authorMapper=a.JatlfDlHtS4pcVEy&name&apikey=test-api-key
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '56'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost:9001
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - Etherpad  (http://etherpad.org)
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '66'
+      Etag:
+      - W/"42-cL1uuhvB81HL2Aqfl9J1nQ"
+      Set-Cookie:
+      - express_sid=s%3A8o1o9sysWyhvsb7HMk0NNovHSXlnYT19.ZrtDrp%2Fua%2BEXwwgaqxAQ09wo8sLuSBw0YTUoNfySZws;
+        Path=/; HttpOnly
+      Date:
+      - Tue, 25 Apr 2017 17:16:19 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":0,"message":"ok","data":{"authorID":"a.DqICdENiwhFJpylg"}}'
+    http_version:
+  recorded_at: Tue, 25 Apr 2017 17:16:19 GMT
+recorded_with: VCR 3.0.3

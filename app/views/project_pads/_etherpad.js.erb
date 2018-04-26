@@ -1,0 +1,13 @@
+$('#modal').modal('hide');
+
+var container = $('#etherpad-frame');
+container.html('<%= escape_javascript(render('projects/etherpad', presenter: project_presenter(project_pad.id), project: project)) %>');
+
+<% if policy(project).collaborate? %>
+$('#etherpad').pad({
+  padId: '<%= raw project_pad.pad_id %>',
+  host: '<%= raw ENV['ETHERPAD_URL'] %>',
+  showControls: true,
+  userName: '<%= raw current_user.short_name %>'
+});
+<% end %>

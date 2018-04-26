@@ -1,0 +1,19 @@
+<%= form_for [project, meme_mapper], remote: true do |f| %>
+  <div class="modal-body">
+    <div class="errors-placeholder"></div>
+
+    <%= render 'shared/errors', errors: meme_mapper.errors %>
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="form-group">
+      <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('general.close') %></button>
+      <%= f.submit t('tools.meme_mapper.save'), class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

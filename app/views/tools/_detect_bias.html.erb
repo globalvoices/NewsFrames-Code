@@ -1,0 +1,77 @@
+<script>
+
+  function getExtendedBias() {
+    var modeField = document.getElementById('mode');
+    modeField.value = 'extended';
+
+    var form = document.getElementById('bias_detector_form');
+    form.submit();
+  } 
+
+  function getNormalizedBias() {
+    var modeField = document.getElementById('mode');
+    modeField.value = 'normalized';
+
+    var form = document.getElementById('bias_detector_form');
+    form.submit();
+  } 
+
+  function hideBiasTable() {
+    var bdTable = document.getElementById('bias_detector_output_table');
+    bdTable.style.display = "none";
+  }
+
+  function showBiasTable() {
+    var bdTable = document.getElementById('bias_detector_output_table');
+    bdTable.style.display = "block";
+  }
+
+  function displayNormalizedBiasTable() {
+    $.ajax({
+    url: $('form[id="bias_detector_form"]')[0].action,
+      headers: {
+        Accept : "text/javascript; charset=utf-8",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      type: 'POST',
+      data: {
+        'mode': 'data',
+        'bias_detector_input': $('#bias_detector_input').val()
+      }
+    });
+  }
+
+  $(document).ready(function(){
+    var bdInput = document.getElementById('bias_detector_input');
+    bdInput.oninput = hideBiasTable;
+  });
+
+</script>
+
+<div class="spacing-2-v">
+  <h2 class="h4 margin-reset"><%= t('tools.bias_detector.heading') %></h2>
+</div>
+<%= form_tag(tools_detect_bias_path, id: 'bias_detector_form', method: :post) do %>
+  <div class="form-group">
+    <label for="bias_detector_input"><%= t('tools.bias_detector.input_data') %>: </label>
+    <%= text_area_tag :bias_detector_input, nil, { rows: 5, cols: 50, class: 'form-control', placeholder: t('tools.bias_detector.input_data_placeholder') } %>
+  </div>
+  <%= hidden_field_tag 'mode', '' %>
+  <div class="btn-group">
+    <%= button_tag "#{t('tools.bias_detector.submit_button')} <b class='caret'></b>".html_safe, class: "btn btn-success dropdown-toggle", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false" %>
+    <ul class="dropdown-menu">
+      <li><a href="javascript:displayNormalizedBiasTable()"><%= t('tools.bias_detector.submit_button_table') %></a></li>
+      <li><a href="javascript:getExtendedBias()"><%= t('tools.bias_detector.submit_button_extended') %></a></li>
+      <li><a href="javascript:getNormalizedBias()"><%= t('tools.bias_detector.submit_button_normalized') %></a></li>
+    </ul>
+  </div>
+<% end %>
+<div class="spacing-half"></div>
+<div id="bias_detector_output_table" style="display: none;">  
+</div>
+<div class="spacing-half"></div>
+<div class="well">
+  <p>
+    <%= raw t('tools.bias_detector.information_message') %>
+  </p>
+</div>

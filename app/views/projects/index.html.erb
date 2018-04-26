@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="spacing-v">
+      <% if user_signed_in? && current_user.name.present? %>
+        <h3><%= t('landing.welcome_user', name: current_user.name) %></h3>
+      <% else %>
+        <h3><%= raw t('landing.welcome_anonymous', link: link_to('Global Voices', 'https://globalvoices.org', target: '_blank')) %></h3>
+      <% end %>
+
+      <p>
+        <%= t('landing.intro') %>
+        <%= link_to t('landing.read_more'), 'https://newsframes.globalvoices.org/about/', target: '_blank' %>
+        <%= t('landing.read_more_cont') %>
+      </p>
+    </div>
+    <div class="spacing-2-v">
+      <h3><%= t('projects.index.lead.heading') %></h3>
+
+      <div class="row flex flex-wrap">
+        <div class="gutter">
+          <%= link_to new_project_path, class: 'project-each project-each--create' do %>
+            <span class="fa fa-plus icon-left-sm"></span>
+            <%= t('projects.index.create_button') %>
+          <% end %>
+        </div>
+
+        <%= render 'list', projects: @lead_projects, empty_message: t('projects.index.lead.empty_message') %>
+      </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class="spacing-2-v">
+        <h3><%= t('projects.index.shared.heading') %></h3>
+
+        <div class="row flex flex-wrap">
+          <%= render 'list', projects: @shared_projects, empty_message: t('projects.index.shared.empty_message') %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if @public_projects.present? %>
+      <div class="spacing-2-v project-public-block">
+        <h3><%= t('projects.index.public.heading') %></h3>
+
+        <div class="row flex flex-wrap">
+          <%= render 'list', projects: @public_projects, empty_message: nil %>
+        </div>
+      </div>
+    <% end %>
+  </div> <!-- /col-sm-8 -->
+  <div class="col-sm-4 sidebar-wrap">
+    <div class="sidebar">
+      <h2 class="h4"><%= t('projects.sidebar.learn_more') %></h2>
+      <p><%= raw t('projects.sidebar.intro', link: link_to('Global Voices', 'https://globalvoices.org/', target: '_blank')) %></p>
+
+      <ul>
+        <% for item in t('projects.sidebar.links') do %>
+          <li>
+            <%= link_to item[:title], item[:url], class: 'font-bold', target: '_blank' %>
+          </li>
+        <% end %>
+      </ul>
+    </div> <!-- /.sidebar -->
+  </div>
+</div> <!-- /.row -->

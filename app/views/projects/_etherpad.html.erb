@@ -1,0 +1,43 @@
+<ul class="nav nav-tabs">
+  <% presenter.pad_list.each do |pad| %>
+    <% if pad.active %>
+      <li class="active">
+        <%= link_to project_path(project, pad: pad.project_pad.id), class: 'dropdown dropdown-toggle', data: { toggle: 'dropdown' } do %>
+          <%= pad.project_pad.name %>
+          <span class="caret"></span>
+        <% end %>
+
+        <ul class="dropdown-menu">
+          <% if policy(pad.project_pad).edit? %>
+            <li>
+              <%= link_to t('projects.show.edit_button'), edit_project_project_pad_path(project, pad.project_pad), remote: true, data: { toggle: 'modal', target: '#modal' } %>
+            </li>
+          <% end %>
+
+          <% if policy(pad.project_pad).destroy? %>
+            <li class="divider"></li>
+            <li>
+              <%= link_to t('projects.show.delete_button'), project_project_pad_path(project, pad.project_pad), method: :delete, remote: true, data: { confirm: t('projects.show.delete_confirm') } %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to pad.project_pad.name, project_pads_path(project, pad: pad.project_pad.id), remote: true %>
+      </li>
+    <% end %>
+  <% end %>
+
+  <% if policy(ProjectPad.new(project: project)).create? %>
+    <li>
+      <%= link_to t('projects.show.add_button'), new_project_project_pad_path(project), remote: true, data: { toggle: 'modal', target: '#modal' } %>
+    </li>
+  <% end %>
+</ul>
+
+<div id="etherpad" class="etherpad-block"></div>
+
+<% unless policy(project).collaborate? %>
+  <%= raw presenter.pad_content %>
+<% end %>

@@ -1,0 +1,58 @@
+<% content_for :body do %>
+  <section class="container">
+    <div>
+      <h1>Typography</h1>
+      <h1>H1</h1>
+      <h2>H2</h2>
+      <h3>H3</h3>
+      <h4>H4</h4>
+      <h5>H5</h5>
+      <h6>H6</h6>
+    </div>
+    
+    <div class="spacing"></div>
+    <div>
+      <h1>Buttons</h1>
+      <div class="btn btn-primary">Button: Primary</div>
+      <div class="btn btn-dull">Button: Dull</div>
+      <div class="btn btn-dull--light">Button: Dull: Light</div>
+    </div>
+    <div class="spacing"></div>
+    <div>
+      <h1>Inputs</h1>
+      <input type="text" class="form-control">
+      <div class="spacing"></div>
+      <h2>Checkboxes: Custom</h2>      
+      <div>
+        <input type="checkbox" class="input-checkbox" id="checkbox-demo-1">
+        <label for="checkbox-demo-1" class="input-checkbox-label"></label>
+      </div>
+
+      <div>
+        <input type="checkbox" class="input-checkbox" id="checkbox-demo-2">
+        <label for="checkbox-demo-2" class="input-checkbox-label">Custom checkbox with text</label>
+      </div>
+      <div class="spacing"></div>
+      <h2>Radios: Custom</h2>      
+      <div>
+        <input type="radio" class="input-radio" id="radio-demo-1" name="radio-demo">
+        <label for="radio-demo-1" class="input-radio-label"></label>
+      </div>
+
+      <div>
+        <input type="radio" class="input-radio" id="radio-demo-2" name="radio-demo">
+        <label for="radio-demo-2" class="input-radio-label">Custom radio with text</label>
+      </div>
+    </div>
+    <div class="spacing"></div>
+    <div>
+      <h1>Tabs: Pills</h1>
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+    </div>
+  </section>
+<% end %>
+<%= render template: "layouts/application" %>

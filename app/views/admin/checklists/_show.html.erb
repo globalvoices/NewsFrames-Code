@@ -1,0 +1,100 @@
+<div class="panel">
+  <h3>Checklist Details</h3>
+  <div class="panel-contents">
+    <div class="attributes_table">
+      <table>
+        <tr class="row">
+          <td>
+            ID
+          </td>
+          <td>
+            <%= checklist.id %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Name
+          </td>
+          <td>
+            <%= checklist.name %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Enabled
+          </td>
+          <td>
+            <% if checklist.enabled %>
+              &#10004;
+            <% else %>
+              &#10008;
+            <% end %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Created At
+          </td>
+          <td>
+            <%= checklist.created_at %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Updated At
+          </td>
+          <td>
+            <%= checklist.updated_at %>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            Items
+          </td>
+          <td>
+            <div class="attributes_table">
+              <table>
+                <tr class="row">
+                  <td></td>
+                  <td><b>Item</b></td>
+                  <td><b>Help</b></td>
+                </tr>
+                <% checklist.items.each do |entry| %>
+                  <tr class="row">
+                    <td>&#9989;</td>
+                    <td><%= entry.item %></td>
+                    <td><%= entry.help.html_safe if entry.help.present? %></td>
+                  </tr>
+                <% end %>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr class="row">
+          <td>Translations</td>
+          <td>
+            <div class="attributes_table">
+              <table>
+                <tr class="row">
+                  <% checklist.available_translations.each do |entry| %>
+                    <td><%= entry %></td>
+                    <td>
+                      <%= link_to('View', show_translation_admin_checklist_path(checklist_id: checklist.id, language: entry)) %>
+                    </td>
+                    <td>
+                      <%= link_to('Edit', edit_translation_admin_checklist_path(checklist_id: checklist.id, language: entry)) %>
+                    </td>
+                    <td>
+                      <%= link_to('Remove', remove_translation_admin_checklist_path(checklist_id: checklist.id, language: entry), method: :delete, data: { confirm: 'Are you sure?' }) %>
+                    </td>
+                  <% end %>
+                </tr>                
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<%= button_to('Back', admin_checklists_path, { method: :get }) %>

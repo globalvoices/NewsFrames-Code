@@ -1,0 +1,17 @@
+<% if errors.present? %>
+  <div class="alert alert-danger alert-dismissable" role="alert">
+    <% if errors.respond_to?(:full_messages) %>
+      <ul>
+        <% for message in errors.full_messages do %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <ul>
+        <% for err in errors do %>
+          <li><%= err.message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

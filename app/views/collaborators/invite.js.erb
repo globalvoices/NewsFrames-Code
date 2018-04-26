@@ -1,0 +1,15 @@
+(function () {
+  $('#modal .modal-header .heading').text('<%= escape_javascript(t('collaborators.manage.heading')) %>');
+
+  var container = $('#modal .main');
+  container.html('<%= escape_javascript(render('collaborators/list', collaborators: collaborators)) %>');
+
+  var endpoint = '<%= escape_javascript(suggest_project_collaborators_path(order_id: params[:order_id])) %>';
+  newsframes.collaborators.typeahead(container, endpoint);
+
+  <% if @errors.present? %>
+    $('#modal .errors-placeholder').html('<%= escape_javascript(render('shared/errors', errors: @errors)) %>');
+  <% elsif @error.present? %>
+    $('#modal .errors-placeholder').html('<%= escape_javascript(render('shared/errors', error: @error)) %>');
+  <% end %>
+})();

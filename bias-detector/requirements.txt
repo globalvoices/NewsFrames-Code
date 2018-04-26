@@ -1,0 +1,11 @@
+Pattern==2.6
+nltk==3.2.4
+textstat==0.3.1
+vaderSentiment==2.5
+requests>=2.2.1
+pytest==3.4
+decorators==0.1.1
+decorator==4.2.1
+NumPy==1.14.2
+Scipy==1.0.0
+scikit-learn==0.19.1

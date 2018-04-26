@@ -1,0 +1,21 @@
+machine:
+  ruby:
+    version: 2.4.1
+  python:
+    version: 2.7.10
+  environment:
+    SECRET_KEY_BASE: ca7f0a0ea958accd0b0907a2573b38065eb4812d3cb11ace8c61408ba562f94f3b6bfeb85277db101c687761556d568109011db295a3ce722ed993efcf8dedd5
+dependencies:
+  cache_directories:
+    - "~/nltk_data"
+  pre:
+    - pip install -r bias-detector/requirements.txt
+database:
+  override:
+    - cp config/database.ci.yml config/database.yml
+    - bundle exec rake db:create db:schema:load --trace
+deployment:
+  staging:
+    branch: develop
+    commands:
+      - bundle exec cap staging deploy

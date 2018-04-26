@@ -1,0 +1,12 @@
+<%= render 'shared/mailer/greeting', user: @user %>
+
+<% if @invitation_token.present? %>
+<%= t('users.mail.admin.invite') %>
+<%= t('mail.invite.accept', link: accept_invitation_url(@user, invitation_token: @invitation_token)) %>
+<% else %>
+<%= t('users.mail.admin.notice') %>
+<% end %>
+
+<%= t('mail.resource_link', resource_name: t('mail.resource_names.admin_dashboard'), link: admin_root_url) %>
+
+<%= render 'shared/mailer/closing' %>

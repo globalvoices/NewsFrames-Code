@@ -1,0 +1,32 @@
+<div class="spacing-v"></div>
+<div class="pull-right">
+  <%= link_to new_project_meme_mapper_path(project), remote: true do %>
+    <span class="fa fa-close trigger-close-searches"></span>
+  <% end %>
+</div>
+
+<h2 class="h4"><%= t('tools.meme_mapper.heading') %></h2>
+<div class="spacing-half-v"></div>
+<h3 class="h5">
+  <%= t('tools.meme_mapper.saved_searches') %>
+  <i class="glyphicon glyphicon-refresh spinning hide"></i>
+</h3>
+
+<table class="table table-hover table-striped table-bordered">
+  <tbody>
+    <% for meme_mapper in @meme_mappers do %>
+      <tr>
+        <td>
+          <%= meme_mapper.created_at %>
+        </td>
+        <td>
+          <%= link_to meme_mapper.name || meme_mapper.image_url, project_meme_mapper_path(project, meme_mapper), remote: true %>
+        </td>
+        <td>
+          <%= link_to t('tools.meme_mapper.edit'), edit_project_meme_mapper_path(project, meme_mapper), remote: true, data: { toggle: 'modal', target: '#modal' } %>
+          <%= link_to t('tools.meme_mapper.delete'), project_meme_mapper_path(project, meme_mapper), method: :delete, remote: true, data: { confirm: t('tools.media_cloud.confirm') } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

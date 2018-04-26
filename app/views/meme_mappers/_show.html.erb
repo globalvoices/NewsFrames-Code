@@ -1,0 +1,60 @@
+<div class="spacing-2-v font-size-sm clearfix">
+  <div class="pull-right">
+    <span>
+      <%= link_to 'New search', new_project_meme_mapper_path(project), remote: true %>
+    </span>
+    <span>|</span>
+    <span>
+      <%= link_to 'Saved searches', project_meme_mappers_path(project), remote: true %>
+    </span>
+  </div>
+</div>
+
+<% unless meme_mapper.name.present? %>
+  <p>
+    <%= link_to 'Save Search', edit_project_meme_mapper_path(project, meme_mapper), class: 'btn btn-primary', remote: true, data: { toggle: 'modal', target: '#modal' } %>
+  </p>
+<% end %>
+
+<div class="well">
+  <div class="h5">
+    <%= presenter.result_count %> results
+  </div>
+
+  <p>
+    for: <%= link_to presenter.image_url, presenter.image_url %>
+  </p>
+</div>
+
+<% backlinks = Kaminari.paginate_array(presenter.backlinks).page(params[:page]).per(10) %>
+
+<div class="well">
+  <div class="pull-right">
+    <i class="glyphicon glyphicon-refresh spinning hide"></i>
+  </div>
+
+  <%= paginate backlinks, remote: true %>
+</div>
+
+<div class="well">
+  <table class="table margin-reset">
+    <tbody>
+      <% for match in backlinks do %>
+        <tr>
+          <td>
+            <img src="<%= match.image_url %>" style="max-width: 300px;" />
+          </td>
+        </tr>
+        <% for backlink in match.backlinks do %>
+          <tr>
+            <td>
+              Crawled on <%= backlink.date %>
+              <br>
+              <%= link_to backlink.link, backlink.link %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

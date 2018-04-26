@@ -1,0 +1,68 @@
+<div class="spacing-2-v font-size-sm clearfix">
+  <div class="pull-right">
+    <span>
+      <%= link_to 'New search', new_project_query_path(project), remote: true %>
+    </span>
+    <span>|</span>
+    <span>
+      <%= link_to 'Saved searches', project_queries_path(project), remote: true %>
+      <span>|</span>
+      <a href="<%= query.media_cloud_url %>" target="_blank">
+        <%= image_tag 'logos/mm-logo.png', alt: '', width: '32' %>
+        <span class="fa fa-external-link"></span>
+      </a>
+    </span>
+  </div>
+</div>
+
+<p>
+  <% if query.migrated %>
+  <span class="highlight">[DASHBOARD MIGRATION]</span>
+  <br>
+  <% end %>
+  <%= query.created_at %>
+  <strong><%= presenter.query_label %></strong>
+  <br>
+  <%= link_to query.media_cloud_url, query.media_cloud_url, class: 'ellipsis full-width', target: '_blank' %>
+</p>
+
+<% unless query.name.present? %>
+  <p>
+    <%= link_to 'Save Search', edit_project_query_path(project, query), class: 'btn btn-primary', remote: true, data: { toggle: 'modal', target: '#modal' } %>
+  </p>
+<% end %>
+
+<div class="well">
+  <div class="h5"><strong>Summary of results</strong></div>
+  <table class="table margin-reset">
+    <tbody>
+      <% for results, i in presenter.query_data(:storycount).each_with_index do %>
+        <tr>
+          <td>
+            <span style="color: #<%= presenter.query_params[i].color %>">
+              <%= presenter.query_names[i] %>:
+            </span>
+
+            <%= results['count'] %>
+            stories found across
+            <% if presenter.query_params[i].sources.present? %>
+              <%= pluralize(*presenter.query_params[i].sources) %>
+            <% else %>
+              all collections
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-frequency-lg">
+  <%= render 'queries/widgets/frequency', presenter: presenter, slice: 0..-1 %>
+</div>
+
+<div class="table-frequency-sm">
+  <%= render 'queries/widgets/frequency', presenter: presenter, slice: 0..10, ellipsis: true %>
+</div>
+
+<%= render 'queries/widgets/stories', presenter: presenter, slice: 0..10 %>

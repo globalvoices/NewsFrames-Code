@@ -1,0 +1,15 @@
+/.bundle
+/log/*
+/tmp/*
+
+.env
+.c9revisions
+.settings
+
+/public/uploads/*
+/public/assets/*
+playbook.retry
+
+.bin
+
+/etherpad

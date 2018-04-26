@@ -1,0 +1,4 @@
+<%= render 'shared/mailer/greeting', user: @user %>
+<%= t('users.mail.registered.welcome' ) %>  <% if @user.approved? %><%= t('users.mail.registered.approved', link: new_user_session_url) %><% else %><%= t('users.mail.registered.unapproved') %><% end %>
+
+<%= render 'shared/mailer/closing' %>

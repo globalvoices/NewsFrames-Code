@@ -1,0 +1,5 @@
+<h1><%= t('projects.edit.heading') %></h1>
+
+<%= form_for @form, as: :project, url: project_path, method: :put do |f| %>
+  <%= render 'form', f: f %>
+<% end %>

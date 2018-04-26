@@ -1,0 +1,12 @@
+(function () {
+  var container = $('#etherpad-frame');
+  container.html('<%= escape_javascript(render('etherpad', project: @project)) %>');
+  <% if policy(@project).collaborate? %>
+    $('#etherpad').pad({
+      padId: '<%= raw presenter.current_pad.pad_id %>',
+      host: '<%= raw ENV['ETHERPAD_URL'] %>',
+      showControls: true,
+      userName: '<%= raw current_user.short_name %>'
+    });
+  <% end %>
+})();

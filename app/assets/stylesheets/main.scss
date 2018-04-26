@@ -1,0 +1,910 @@
+/* This is the main entrypoint to the front-end styling */
+
+/*
+ *= require application
+ *= require_self
+ */
+
+// -------------------------------------
+// Variables: Colors
+
+// Colors: White through black
+$white: #fff;
+$gray-mist: #f4f4f4;
+$gray-lighter: #eee;   // BS Override
+$gray-titanium: #ccc;
+$gray-steel: #a3a3a3;
+$gray: #555;   // BS Override
+$gray-dark: #353535;   // BS Override
+$black: #000;
+
+// Colors: Brand
+$brand-primary: #02b875;   // Green // BS Override
+$brand-primary--light: #afefc0;
+$brand-secondary: #5cc9e2; // Blue
+$brand-secondary--light: #bbe3ec;
+$brand-secondary--dark: #44a3fc;
+// Colors: Text
+$text-color: $black;
+$headings-color: $gray-dark;
+
+
+// -------------------------------------
+// Variables: Links
+$link-hover-decoration: none;   // BS Override
+
+$table-bg-hover: $gray-lighter;
+
+
+// -------------------------------------
+// Variables: Font Icons
+
+$font-icon: "FontAwesome";
+
+
+// -------------------------------------
+// Variables: Font Families
+$font-family-sans-serif:  'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;   // BS Override
+
+
+// -------------------------------------
+// Variables: Font Weights
+$font-normal: 400;
+$font-bold: 700;
+
+// -------------------------------------
+// Variables: Font Sizes
+$font-size-xs: 80%;
+$font-size-sm: 90%;
+$font-size-lg: 110%;
+$font-size-xl: 120%;
+
+
+// -------------------------------------
+// Variables: Dimensions
+
+$footer-height: 67px;
+
+
+// -------------------------------------
+// Variables: Headings
+$headings-font-weight: $font-bold;  // BS Override
+$font-size-h1: 36px;  // BS Override
+$font-size-h2: 29px;  // BS Override
+$font-size-h3: 22px;  // BS Override
+
+
+// -------------------------------------
+// Variables: Border Radius
+
+$border-radius-base: 4px;   // BS Override
+$border-radius-large: ($border-radius-base * 2);   // BS Override
+$border-radius-small: ($border-radius-base / 2);   // BS Override
+
+
+// -------------------------------------
+// Variables: Spacing
+
+$spacing: 12px;
+$spacing-half: ($spacing / 2);
+$spacing-2: ($spacing * 2);
+$spacing-3: ($spacing * 3);
+
+
+// -------------------------------------
+// Variables: Inputs
+$input-border: $gray-steel;  // BS Override
+$input-border-radius: 0;  // BS Override
+$input-border-focus: $brand-primary;   // BS Override
+
+
+// -------------------------------------
+// Variables: Buttons
+$btn-font-weight: $font-bold;  // BS Override
+$btn-border-radius-base: $border-radius-large;  // BS Override
+$btn-border-radius-base: $border-radius-base;   // BS Override
+$btn-primary-border: $brand-primary;   // BS Override
+
+
+// -------------------------------------
+// Variables: Navbar
+$navbar-height: 60px; // BS Override;
+$navbar-inverse-bg: $brand-secondary;  // BS Override
+$navbar-inverse-border: none;
+$navbar-border-radius: 0;   // BS Override
+$navbar-inverse-toggle-hover-bg: $brand-secondary--dark;   // BS Override
+$navbar-inverse-toggle-border-color: $brand-secondary--dark;   // BS Override
+$navbar-inverse-link-color: $white;   // BS Override
+$navbar-inverse-link-active-color: $text-color;   // BS Override
+$navbar-inverse-link-active-bg: transparent;   // BS Override
+$navbar-inverse-brand-hover-color: $headings-color; // BS Override
+$navbar-inverse-brand-color: $black;  // BS Override
+//$navbar-margin-bottom: 0;   // BS Override
+
+// -------------------------------------
+// Variables: Nav
+$nav-link-padding: $spacing-half ($spacing + 4) ($spacing-half + 2);
+
+
+// -------------------------------------
+// Variables: Nav: Pills
+$nav-pills-active-link-hover-bg: $gray-steel;
+
+
+// -------------------------------------
+// Variables: Badges
+$badge-active-color: $text-color;   // BS Override
+$badge-active-bg: $brand-primary--light;   // BS Override
+
+
+// -------------------------------------
+// Variables: Project Size
+$project-each-size: 124px;
+
+
+// -------------------------------------
+// Variables: Icons for toggling
+$width-toggle-icon: 40px;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+.etherpad-block {
+  /*@media (min-width: #{$screen-md-min}) {
+    position: relative;
+    padding-bottom: 52.25%;
+    height: 0;
+    overflow: hidden;
+  }*/
+
+  iframe {
+    //min-height: 500px;
+    min-height: 400px; // fallback
+    min-height: calc(100vh - (#{$navbar-height} + #{$footer-height} + 100px));
+    /*@media (min-width: #{$screen-md-min}) {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }*/
+  }
+}
+
+.etherpad-title-block {
+  padding: $spacing-2 0 0 0;
+}
+
+// -------------------------------------
+// GLOBALS
+
+// -------------------------------------
+// Globals: Colors
+
+.gray-titanium {
+  color: $gray-titanium;
+}
+
+.gray-steel {
+  color: $gray-steel;
+}
+
+// -------------------------------------
+// Globals: Headings
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin-top: 0;
+}
+
+// -------------------------------------
+// Globals: Font Weights
+
+.font-bold {
+  font-weight: $font-bold;
+}
+
+// -------------------------------------
+// Globals: Font Sizes
+
+.font-size-xs {
+  font-size: $font-size-xs;
+}
+
+.font-size-sm {
+  font-size: $font-size-sm;
+}
+
+.font-size-lg {
+  font-size: $font-size-lg;
+}
+
+.font-size-xl {
+  font-size: $font-size-xl;
+}
+
+// -------------------------------------
+// Globals: Tables
+
+// Tables: Borderless
+
+.table-borderless {
+  > thead > tr > th, > thead > tr > td, > tbody > tr > th,  > tbody > tr > td, > tfoot > tr > th, > tfoot > tr > td {
+  border-top: none;
+ }
+}
+
+
+// -------------------------------------
+// Globals: Margin Reset
+
+.margin-reset {
+  margin: 0;
+}
+
+
+// -------------------------------------
+// Globals: Grid
+
+.gutter {
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+}
+
+// Row: Small for thinner columns in the grid
+.row-sm {
+  margin-left: -($grid-gutter-width / 4);
+  margin-right: -($grid-gutter-width / 4);
+  @include clearfix;
+}
+
+// Gutters: Small for thinner columns in the grid
+
+.gutter-sm {
+  padding-left: $grid-gutter-width / 4;
+  padding-right: $grid-gutter-width / 4;
+}
+
+
+// -------------------------------------
+// Globals: List Groups
+
+.list-group--brand {
+  border: none;
+
+  .list-group-item {
+    border-bottom-color: none;
+    background-color: $gray-lighter;
+    margin-bottom: 0;
+  }
+}
+
+.list-group-title {
+  margin-bottom: $spacing-half;
+}
+
+.list-group-date {
+  margin-left: auto;
+  min-width: 120px;
+}
+
+// -------------------------------------
+// Globals: Ellipsis
+
+.ellipsis, %ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+// -------------------------------------
+// Globals: Buttons
+
+.btn {
+  padding-left: ($spacing + 4);
+  padding-right: ($spacing + 4);
+  padding-bottom: ($spacing-half + 2);
+}
+
+// Button: Dull Gray
+
+.btn-dull {
+  @include button-variant($white, $gray, $gray);
+}
+
+.btn-dull--light {
+  @include button-variant($white, $gray-steel, $gray-titanium);
+}
+
+
+// -------------------------------------
+// Globals: Panels
+
+// Panel: Theme: Brand Secondary
+// Uses available BS Mixin
+.panel-secondary {
+  @include panel-variant(transparent, $text-color, $brand-secondary--light, transparent);
+}
+
+
+// -------------------------------------
+// Globals: Flexbox Helpers
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-baseline {
+  align-items: baseline;
+}
+
+// Globals: Spacing
+
+$spacing-global: (
+  spacing: $spacing,
+  spacing-2: $spacing-2,
+  spacing-3: $spacing-3,
+  spacing-half: $spacing-half
+);
+
+// Globals: Spacing: Vertical
+
+// Generates placeholders and classes for vertical spacing
+// Uses padding top and bottom
+// E.g. .spacing-v, %spacing-v, .spacing-2-v, %.spacing-2-v, etc.
+
+@each $name, $value in $spacing-global {
+  .#{$name}-v, %#{$name}-v {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// Globals: Spacing: Horizontal
+
+// Generates placeholders and classes for horizontal spacing
+// Uses padding left and right
+// E.g. .spacing-h, %spacing-h, .spacing-2-h, %spacing-2-h, etc.
+
+@each $name, $value in $spacing-global {
+  .#{$name}-h, %#{$name}-h {
+    padding-left: $value;
+    padding-right: $value;
+  }
+}
+
+// Globals: Spacing
+
+// Generates placeholders and classes for spacing
+// Uses padding on all four sides
+// E.g. .spacing, %spacing, .spacing-2, %spacing-2, etc.
+
+@each $name, $value in $spacing-global {
+  .#{$name}, %#{$name} {
+    padding: $value;
+  }
+}
+
+// -------------------------------------
+// Globals: Word Break
+
+.word-break {
+  word-break: break-all;
+}
+
+// Globals: Full Width
+
+.full-width {
+  display: block;
+  width: 100%;
+} // Remove later
+
+
+// -------------------------------------
+// Globals: Icons
+
+.icon-right-sm {
+  margin-left: $spacing-half;
+}
+
+.icon-left-sm {
+  margin-right: $spacing-half;
+}
+
+
+// -------------------------------------
+// FORMS
+
+// BS Inputs: Overrides
+.form-control {
+  border-width: 2px;
+  box-shadow: none;
+
+  &:focus {
+    box-shadow: inset 0 1px 1px rgba($black, 0.075), 0 0 8px rgba($black, 0.1);
+  }
+}
+
+// Checkboxes & Radios: Custom
+
+.input-checkbox, .input-radio {
+  opacity: 0;
+  position: absolute;
+
+
+  &:focus + .input-checkbox-label, &:focus + .input-radio-label {
+    border: 2px $gray-steel;
+  }
+}
+
+.input-checkbox, .radio-checkbox, .input-checkbox-label, .radio-checkbox-label {
+  cursor: pointer;
+}
+
+.input-checkbox-label, .input-radio-label {
+  position: relative;
+  font-weight: $font-normal;
+}
+
+label {
+  &.input-checkbox-label, .input-radio-label {
+    padding-left: 0;
+  }
+}
+
+.input-checkbox + .input-checkbox-label:before, .input-radio + .input-radio-label:before {
+  background: $white;
+  border: 1px solid $gray-steel;
+  border-radius: 2px;
+  content: "";
+  font-size: 12px;
+  line-height: 1.1;
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  text-align: center;
+  margin-right: $spacing-half;
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.input-checkbox:checked + .input-checkbox-label:before {
+  content: "\f00c";
+  font-family: $font-icon;
+  background: $brand-secondary;
+  border-color: $brand-secondary;
+  color: $white;
+}
+
+.input-radio + .input-radio-label:before  {
+  border-radius: 50%;
+}
+
+.input-radio:checked + .input-radio-label:before {
+  background: $brand-secondary;
+  box-shadow: inset 0 0 0 3px $white;
+}
+
+
+// -------------------------------------
+// LAYOUT: MAIN
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-site {
+  flex-grow: 1;
+  min-width: 280px; // because of flexbox
+}
+
+// -------------------------------------
+// LAYOUT: NAVBAR
+
+// BS Navbar: Overrides
+
+.navbar-nav {
+  a {
+    font-weight: $font-bold;
+    font-size: $font-size-xl;
+  }
+
+  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+    font-size: $font-size-xs;
+  }
+}
+
+.navbar-brand {
+  font-size: $font-size-h2;
+  font-weight: $font-bold;
+  line-height: 14px;
+}
+
+.navbar-collapse {
+
+  @media (max-width: $screen-xs-max) {
+    background-color: $brand-secondary;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+// -------------------------------------
+// LAYOUT: FOOTER
+
+.footer {
+  color: $white;
+  background-color: $gray-dark;
+  padding: ($spacing * 1.5) $spacing-2;
+  //padding-bottom: ($spacing * 7);
+
+  a {
+    color: currentColor;
+
+    &:hover, &:focus {
+      color: $gray-lighter;
+    }
+  }
+
+  @media (max-width: $screen-md-max) {
+    text-align: center;
+  }
+}
+
+.footer-list-links {
+  li, a {
+    display: inline-block;
+  }
+
+  a {
+    font-size: $font-size-lg;
+    font-weight: $font-bold;
+  }
+}
+
+.footer-copyright-text {
+  @media (min-width: $screen-md-min) {
+    text-align: right;
+  }
+}
+
+// -------------------------------------
+// NAV PILLS
+
+// BS Nav Pills: Overrides
+.nav-pills {
+  > li {
+    > a {
+      font-weight: $font-bold;
+      border-radius: $border-radius-large;
+    }
+  }
+
+  .badge {
+    font-size: $font-size-base;
+    vertical-align: top;
+    position: relative;
+  }
+}
+
+
+// -------------------------------------
+// LOADING
+
+.glyphicon.spinning {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: scale(1) rotate(0deg); }
+  to { transform: scale(1) rotate(360deg); }
+}
+
+
+// -------------------------------------
+// DISABLED CLASS: TEXT, LINKS
+
+a.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+}
+
+
+// -------------------------------------
+// BODY: OVERRIDES
+
+.body-full-screen {
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  > .container-site {
+    overflow: auto;
+  }
+
+  > .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .sidebar {
+    max-height: calc(100vh - (#{$navbar-height} + #{$footer-height}));
+    overflow-y: auto;
+  }
+}
+
+
+// -------------------------------------
+// PAGE: PROJECT
+
+// Projects
+
+.project-each {
+  background-color: $brand-primary--light;
+  border: 2px solid rgba($black, 0.1);
+  padding: $spacing;
+  display: block;
+  width: $project-each-size;
+  height: $project-each-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .project-public-block & {
+    background-color: $brand-secondary;
+  }
+}
+
+.project-each-icon {
+  color: rgba($white, 0.7);
+  font-size: 84px;
+}
+
+.project-each--create {
+  background-color: transparent;
+  border-style: dashed;
+  border-color: currentColor;
+  font-size: $font-size-sm;
+  font-weight: $font-bold;
+}
+
+.project-caption {
+  width: $project-each-size;
+  font-size: $font-size-sm;
+  text-align: center;
+  padding-top: 3px;
+  @extend %ellipsis;
+}
+
+// Project: Layout
+
+.container-etherpad {
+  margin-bottom: $spacing-2;
+
+  @media (min-width: #{$screen-sm-min}) {
+    display: flex;
+  }
+}
+
+// Checklists
+
+.info-checkbox {
+  color: $brand-secondary;
+  margin-left: $spacing;
+
+  &:hover, &:focus {
+    color: $brand-secondary--dark;
+  }
+}
+
+// Project: Sidebar
+
+.sidebar-wrap {
+  background-color: $gray-mist;
+  padding-right: 0;
+  position: relative;
+  min-width: 350px;
+}
+
+.sidebar {
+  padding: $spacing-2;
+}
+
+
+// Sidebar: Toggle Width
+
+.etherpad-wrap-flex, .sidebar-wrap-flex {
+  transition: all 0.2s ease-in;
+}
+
+.js-etherpad-width-half, .js-sidebar-width-half {
+  width: 50%;
+  transition: all 0.3s ease-in;
+}
+
+.js-sidebar-width-tool {
+  width: 100%;
+}
+
+.js-etherpad-width-tool {
+  width: 0;
+  transition: all 0.3s ease-in;
+}
+
+.js-sidebar-width-etherpad {
+  transition: all 0.35s ease-in;
+  min-width: 0;
+  width: $width-toggle-icon;
+  transition: all 0.35s ease-in;
+  overflow: hidden;
+
+  .tab-content {
+    visibility: hidden;
+  }
+}
+
+.js-etherpad-width-etherpad {
+  width: 90%; // fallback
+  width: calc(100% - #{$width-toggle-icon});
+  transition: all 0.3s ease-in;
+}
+
+.sidebar-wrap-flex {
+  .frequency-table-stacked {
+    display: block;
+
+    tbody, tr, td {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .table-frequency-lg {
+    display: none;
+  }
+}
+
+.js-sidebar-width-tool, .js-sidebar-width-tool {
+  .table-frequency-sm {
+    display: none;
+  }
+
+  .table-frequency-lg {
+    display: block;
+  }
+
+  .frequency-table-stacked {
+    display: table;
+    table-layout: fixed;
+
+    tbody, tr, td {
+      width: auto;
+    }
+
+    tbody {
+      display: table-row-group;
+    }
+
+    tr {
+      display: table-row;
+    }
+
+    td {
+      display: table-cell;
+    }
+  }
+}
+
+.toggle-panel-icon-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: $spacing-half 0 0 $spacing;
+}
+
+.toggle-panel-icon {
+  font-size: 18px;
+  display: block;
+  padding: $spacing-half 0;
+}
+
+.toggle-width-tool, .toggle-width-etherpad {
+  font-size: 10px;
+  font-weight: $font-bold;
+  margin-bottom: 2px;
+}
+
+.toggle-width-half {
+  &:before {
+    content: '\f065';
+  }
+}
+
+.toggle-width-half--compress {
+  &:before {
+    content: '\f066';
+  }
+}
+
+.toggle-width-tool {
+  &:before {
+    content: '\f053 \f053';
+  }
+}
+
+//.toggle-width-tool--compress {
+  //&:before {
+    //content: '\f053  \f068';
+  //}
+//}
+
+.toggle-width-etherpad {
+  &:before {
+    content: '\f054 \f054';
+  }
+}
+
+//.toggle-width-etherpad--compress {
+  //&:before {
+    //content: '\f054  \f067';
+  //}
+//}
+
+
+// Sidebar: MediaCloud
+
+.list-mc-searches {
+  margin-left: auto;
+}
+
+.trigger-close-searches {
+  margin-top: (($spacing * 4) - 2);
+}
+
+.highlight {
+  color: #e14c11;
+  font-weight: bold;
+}
+
+
+// -------------------------------------
+// PAGE: PROJECT
+
+.project-title-icon {
+  font-size: 75%;
+  position: relative;
+  top: -4px;
+}
+
+.etherpad-block {
+  border: 1px solid $nav-tabs-border-color;
+  border-top: none;
+}
+
+.dropdown-media-frequency {
+  margin-left: auto;
+}

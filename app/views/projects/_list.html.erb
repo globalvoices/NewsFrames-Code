@@ -1,0 +1,17 @@
+<% if projects.present? %>
+  <% for project in projects do %>
+    <div class="gutter">
+      <%= link_to project_path(project), class: 'project-each' do %>
+        <span class="fa fa-file-text-o project-each-icon"></span>
+      <% end %>
+      <div class="project-caption">
+        <strong><%= project.name %></strong>
+        <div class="font-size-sm"><%= project.created_at %></div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="col-xs-12 spacing-v">
+    <em><%= empty_message %></em>
+  </div>
+<% end %>

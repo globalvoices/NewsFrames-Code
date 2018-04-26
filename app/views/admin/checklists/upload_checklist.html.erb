@@ -1,0 +1,5 @@
+<%= form_tag(import_admin_checklists_path, method: :post, multipart: true) do %>
+  <label for="name">Checklist Name: </label><%= text_field_tag :name, nil, { placeholder: 'Checklist name' } %>
+  <%= file_field_tag "file" %>
+  <%= submit_tag 'Upload' %>
+<% end %>

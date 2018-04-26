@@ -1,0 +1,253 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  locale_name: "English"
+
+  # Rails
+
+  attributes:
+    created_at: "Creation time"
+    updated_at: "Last modified"
+
+  activerecord:
+    models:
+      collaborator:
+        zero: "Collaborators"
+        one: "Collaborator"
+        other: "Collaborators"
+      project:
+        zero: "Projects"
+        one: "Project"
+        other: "Projects"
+      user:
+        zero: "Users"
+        one: "User"
+        other: "Users"
+
+    attributes:
+      collaborator:
+        lead: "Lead"
+      project:
+        name: "Name"
+      query:
+        name: "Name"
+      user:
+        admin: "Admin"
+        approved: "Approved"
+        email: "Email"
+        name: "Name"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current Password"
+        language: "Language"
+
+  date:
+    formats:
+      default: "%b %d %Y"
+      short: "%b %d"
+      long: "%B %d %Y"
+  time:
+    formats:
+      default: "%b %d %Y %H:%M"
+      short: "%b %d %H:%M"
+      long: "%A, %B %d %Y %H:%M"
+      time_only: "%H:%M"
+
+  # Application templates
+
+  general:
+    title: "Welcome to GlobalVoices NewsFrames"
+    heading: "NewsFrames"
+    close: "Close"
+    toggle_navigation: "Toggle navigation"
+    loading: "Loading..."
+    back: 'Back'
+    update: 'Update'
+
+  landing:
+    welcome_user: "Welcome %{name}"
+    welcome_anonymous: "Welcome to NewsFrames, a project of %{link}"
+    intro: |-
+      Explore the sample projects or dive in and create your own.
+    read_more: "Read more"
+    read_more_cont: "about the NewsFrames initiative."
+
+  menu:
+    home: "Home"
+    about: "About"
+    contact: "Contact"
+    projects: "Projects"
+    profile: "Profile"
+    sign_out: "Sign out"
+    log_in: "Log In"
+    sign_up: "Sign Up"
+    admin: "Admin"
+
+  mail:
+    greeting: "Dear %{name}"
+    thanks: "Thanks,"
+    from: "NewsFrames Team"
+    resource_link: "Once logged in, %{resource_name} is available at: %{link}"
+    resource_names:
+      admin_dashboard: "the admin dashboard"
+      project: "the project"
+    invite:
+      accept: "You can accept the invitation by clicking the following link: %{link}"
+
+  collaborators:
+    manage:
+      heading: "Manage Collaborators"
+      lead: "(lead)"
+      you: "(you)"
+      confirm_delete: "Are you sure?"
+    invite:
+      heading: "Invite Collaborators"
+      emails_placeholder: "Enter email addresses separated by spaces or commas"
+      submit_button: "Invite"
+    mail:
+      invited: "You've been invited to collaborate on a NewsFrames project: %{name}"
+
+  projects:
+    index:
+      lead:
+        heading: "My Projects"
+        empty_message: "You are not the lead on any projects."
+      shared:
+        heading: "Projects shared with me"
+        empty_message: "No projects are currently shared with you."
+      public:
+        heading: "Public Projects"
+      create_button: "Create Project"
+    edit:
+      heading: "Edit Project"
+    new:
+      heading: "Create Project"
+    show:
+      add_button: "+ Add"
+      edit_button: "Edit"
+      delete_button: "Delete"
+      delete_confirm: "Are you sure?"
+      collaborators_button: "Collaborators"
+      tools:
+        media_cloud: 'Media Cloud'
+        bias_detector: 'Bias Prism'
+        meme_mapper: 'Meme Mapper'
+        checklist: 'Checklists'
+    form:
+      name: "Name"
+      public: "Public"
+      checklists: "Project checklists"
+      zombie_checklist_message: "parent checklist has been deleted from the system"
+      submit: "Submit"
+      cancel: "Cancel"
+      create: "Create"
+    sidebar:
+      learn_more: "Learn More"
+      intro: |-
+        An initiative of %{link}, our collaborations use data to explore
+        how the "framing" or shaping of news coverage can affect the way
+        the world thinks.
+      links:
+        - url: https://newsframes.globalvoices.org/2017/02/09/why-the-news-frame-matters/
+          title: What is a frame (and why does it matter)?
+        - url: https://newsframes.globalvoices.org/tools/how-to/
+          title: Getting started with a project
+
+  project_pads:
+    new:
+      heading: "Create Pad"
+    edit:
+      heading: "Edit Pad"
+
+  users:
+    profile:
+      need_current_password: "we need your current password to confirm your changes"
+      leave_password_blank: "leave blank if you don't want to change it"
+      edit_profile_title: "Edit User"
+    mail:
+      approved:
+        welcome: "Welcome to our community. Your NewsFrames account has been approved."
+        sign_in: "You can start using NewsFrames by signing in at %{link}."
+      admin:
+        invite: "You've been invited to be a NewsFrames admin."
+        notice: "You are now a NewsFrames admin"
+      registered:
+         welcome: "Welcome to NewsFrames!!"
+         approved: |-
+           You have successfully created your account.  You can login by visiting %{link}.
+         unapproved: |-
+           You have successfully created your account, but it needs to be approved before you can start using it.
+           We have informed the system administrator and we will send a confirmation email once your account is approved.
+  checklists:
+    list:
+      heading: 'Checklists'
+      complete: 'complete'
+      complete_across_team: 'complete across team'
+      submit_button: 'Submit'
+
+  tools:
+    bias_detector:
+      heading: 'Bias Prism'
+      input_data: 'Input Data'
+      input_data_placeholder: 'Input some text here to inspect for bias'
+      submit_button: 'Run Prism'
+      submit_button_table: 'Display Table'
+      submit_button_extended: 'Extended'
+      submit_button_normalized: 'Normalized'
+      information_message: |-
+        Paste english-language text in the above box and click the button.
+        The results are available either via CSV files or an HTML display. You can understand more about these numbers through
+        <a href="www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">this paper</a> and this <a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">guide</a>.
+        <br><br>
+        This functionality, a collaboration with
+        <a href="http://www.socialai.gatech.edu/" target="_blank">Georgia Tech's Behavioral Modeling and
+        Computational Social Systems Group</a>, is experimental and undergoing active research.
+        Contact the NewsFrames team with any questions.
+
+    media_cloud:
+      heading: "Media Cloud"
+      saved_searches: "Saved Searches"
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "Are you sure?"
+      query_term: "Simple Query or Query URL"
+      instructions: |-
+        Into the textbox above:
+        <ul>
+        <li>enter a term to search within Media Cloud's U.S. Top 50 Online News collection during the past year, or</li>
+        <li>enter your own custom Media Cloud query by pasting its URL after a search <a target="_blank" href="https://explorer.mediacloud.org/">here</a></li>
+        </ul>
+      submit: "Submit"
+      save: "Save"
+      save_search: "Save Search"
+      fetching: "Fetching data from Media Cloud..."
+      max_stories_notice: "Maximum Story Fetch: 10,000"
+
+    meme_mapper:
+      heading: 'Meme Mapper'
+      saved_searches: 'Saved Searches'
+      delete: 'Delete'
+      image_url: 'Image URL'
+      submit: 'Submit'
+      fetching: 'Fetching...'
+      save: 'Save'
+      save_search: 'Save Search'

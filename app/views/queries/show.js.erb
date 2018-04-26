@@ -1,0 +1,11 @@
+(function () {
+  $('#modal').modal('hide');
+
+  var container = $('#mediacloud .content-placeholder');
+  container.html('<%= escape_javascript(render('show')) %>');
+
+  var form = container.find('#frequency-form')
+  form.find('select').on('change', function () {
+    form.submit();
+  });
+})();

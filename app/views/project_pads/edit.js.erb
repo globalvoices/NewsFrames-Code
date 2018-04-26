@@ -1,0 +1,6 @@
+$('#modal .modal-header .heading').text('<%= t('project_pads.edit.heading') %>');
+$('#modal .main').html('<%= escape_javascript(render('form', project_pad: @project_pad)) %>');
+
+<% if @errors.present? %>
+$('#modal .errors-placeholder').html('<%= escape_javascript(render('shared/errors', errors: @project_pad.errors)) %>');
+<% end %>

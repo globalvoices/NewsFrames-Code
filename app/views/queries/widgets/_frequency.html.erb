@@ -1,0 +1,108 @@
+<% form_id = SecureRandom.uuid %>
+
+<script>
+ $(function () {
+   var form = $('#<%= form_id %>');
+   form.find('select').on('change', function () {
+     form.submit();
+   });
+ });
+</script>
+
+<div class="well">
+  <div class="clearfix flex flex-wrap flex-align-center spacing-v">
+    <div><strong>Frequency</strong></div>
+    <div class="dropdown dropdown-media-frequency">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-cog"></span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <% for name, index in presenter.frequency_options %>
+          <li><%= link_to "Download #{name} data CSV", project_query_path(project, query, filter: { frequency: index }, format: :csv) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
+  <% if presenter.query_params.length > 1 %>
+    <%= form_tag project_query_path(project, query), method: :get, class: 'form-inline', id: form_id, remote: true do %>
+      <table class="table frequency-table margin-reset spacing-v">
+        <tbody>
+          <tr>
+            <td>
+              <div class="form-group">
+                <%= select_tag 'filter[frequency][]', options_for_select(presenter.frequency_options, presenter.frequency_indices.first), class: 'form-control' %>
+              </div>
+            </td>
+
+            <td></td>
+
+            <td>
+              <div class="form-group">
+                <%= select_tag 'filter[frequency][]', options_for_select(presenter.frequency_options, presenter.frequency_indices.last), class: 'form-control' %>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  <% end %>
+
+  <table class="table frequency-table frequency-table-stacked margin-reset">
+    <tbody>
+      <tr>
+        <td>
+          <center style="color: #<%= presenter.frequency_params.first.color %>">
+            <%= presenter.frequency_params.first.name %>
+          </center>
+        </td>
+        <% if presenter.query_params.length > 1 %>
+          <td>
+            <center>both</center>
+          </td>
+          <td>
+            <center style="color: #<%= presenter.frequency_params.last.color %>">
+              <%= presenter.frequency_params.last.name %>
+            </center>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td style="color: #<%= presenter.frequency_params.first.color %>">
+          <% for term in presenter.frequency_terms[0][slice] do %>
+            <span style="font-size: <%= 12 + term.count %>px">
+              <%= term.value %>
+            </span>
+          <% end %>
+          <% if defined?(ellipsis) && ellipsis %>
+            ...
+          <% end %>
+        </td>
+        <% if presenter.query_params.length > 1 %>
+          <td>
+            <% for term in presenter.frequency_terms[1][slice] do %>
+              <span style="font-size: <%= 12 + term.count %>px">
+                <%= term.value %>
+              </span>
+            <% end %>
+            <% if defined?(ellipsis) && ellipsis %>
+              ...
+            <% end %>
+          </td>
+          <td style="color: #<%= presenter.frequency_params.last.color %>">
+            <% for term in presenter.frequency_terms[2][slice] do %>
+              <span style="font-size: <%= 12 + term.count %>px">
+                <%= term.value %>
+              </span>
+            <% end %>
+            <% if defined?(ellipsis) && ellipsis %>
+              ...
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>

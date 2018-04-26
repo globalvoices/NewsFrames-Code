@@ -1,0 +1,16 @@
+[Unit]
+Description=Newsframes Etherpad Server
+Requires=network.target
+Requires=nginx.service
+Requires=postgresql.service
+ 
+[Service]
+Type=oneshot
+RemainAfterExit=true
+User=globalvoices
+Group=globalvoices
+WorkingDirectory=/opt/www/globalvoices
+ExecStart=/bin/bash -lc 'nohup ./etherpad/bin/run.sh &'
+ 
+[Install]
+WantedBy=multi-user.target

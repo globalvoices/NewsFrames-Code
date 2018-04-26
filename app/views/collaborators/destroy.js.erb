@@ -1,0 +1,13 @@
+(function () {
+  $('#modal .modal-header .heading').text('<%= escape_javascript(t('collaborators.manage.heading')) %>');
+
+  var container = $('#modal .main');
+  container.html('<%= escape_javascript(render('collaborators/list', collaborators: collaborators)) %>');
+
+  var endpoint = '<%= escape_javascript(suggest_project_collaborators_path(order_id: params[:order_id])) %>';
+  newsframes.collaborators.typeahead(container, endpoint);
+
+  <% if collaborator.user == current_user %>
+  window.location = '<%= escape_javascript(projects_path) %>';
+  <% end %>
+})();

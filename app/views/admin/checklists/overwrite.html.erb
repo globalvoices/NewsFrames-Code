@@ -1,0 +1,5 @@
+<%= render 'show', checklist: @checklist %>
+<%= form_tag(overwrite_admin_checklist_path(id: @checklist.id), multipart: true) do %>
+  <label for="name">Checklist Name: </label><%= text_field_tag :name, @checklist.name, { placeholder: 'Checklist name' } %>
+  <%= submit_tag 'Update' %>
+<% end %>
