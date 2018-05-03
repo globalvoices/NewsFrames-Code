@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   post '/tools/detect-bias' => 'tools#detect_bias'
 
   devise_for :users,
-             path_names: { sign_up: 'register', sign_in: 'login', sign_out: 'logout' },
-             controllers: { registrations: 'users', sessions: 'sessions' }
+            path_names: { 
+              sign_up: 'register', 
+              sign_in: 'login', 
+              sign_out: 'logout' 
+            },
+            controllers: { registrations: 'users', sessions: 'sessions' }
 
   resources :projects do
     get :pads
