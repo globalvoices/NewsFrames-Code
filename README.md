@@ -29,7 +29,7 @@ Current build status:
 * `echo "test-api-key" > ./etherpad/APIKEY.txt`
 * `cp config/etherpad.json.example ./etherpad/settings.json`
 * customize `./etherpad/settings.json` as needed
-  * Add your domain to enable the custom plugin `"ep_gv_insert_image": {"domains": ["http://sapraaman.com:3000"]}`
+  * Add your domain to enable the custom plugin `"ep_gv_insert_image": {"domains": ["http://localhost:3000"]}`
 
 ## BiasDetector setup:
 
