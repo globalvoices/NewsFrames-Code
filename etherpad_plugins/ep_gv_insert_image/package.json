@@ -1,0 +1,17 @@
+{
+  "name": "ep_gv_insert_image",
+  "description": "Listens to mesage and posts image at current location",
+  "version": "0.0.1",
+  "author": {},
+  "contributors": [{
+    "name": "Amandeep Singh",
+    "email": "aman@colab.coop"
+  }, {
+    "name": "Scott Nelson",
+    "email": "scott@colab.coop"
+  }],
+  "dependencies": {},
+  "engines": {
+    "node": ">= 0.4.1"
+  }  
+}
