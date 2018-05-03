@@ -18,4 +18,4 @@ deployment:
   staging:
     branch: develop
     commands:
-      - bundle exec cap staging deploy
+      - bundle exec cap remote deploy
