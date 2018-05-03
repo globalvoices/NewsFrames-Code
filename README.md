@@ -24,10 +24,12 @@ Current build status:
 * `npm install`
 * `cd ..`
 * `npm install ep_fileupload ep_copy_paste_images ep_previewimages ep_embedded_hyperlinks ep_document_import_hook ep_import_documents_images ep_markdown ep_export_cp_html_image ep_font_size ep_desktop_notifications ep_special_characters ep_foot_note ep_automatic_logut`
+* `cp -R etherpad_plugins/ep_gv_insert_image etherpad/node_modules/ep_gv_insert_image`
 * `cd ..`
 * `echo "test-api-key" > ./etherpad/APIKEY.txt`
 * `cp config/etherpad.json.example ./etherpad/settings.json`
 * customize `./etherpad/settings.json` as needed
+  * Add your domain to enable the custom plugin `"ep_gv_insert_image": {"domains": ["http://sapraaman.com:3000"]}`
 
 ## BiasDetector setup:
 

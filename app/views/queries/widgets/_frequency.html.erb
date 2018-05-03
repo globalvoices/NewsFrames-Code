@@ -7,6 +7,24 @@
      form.submit();
    });
  });
+
+ function addMCResultToPad() {
+   // when large table is visible, etherpad frame is not available, so no need to handle it
+   var node = $('#mc_result_frequency_small_table');
+   if (node.is(":visible")) node = node[0];
+   if (node === null) return;
+
+   domtoimage.toPng(node)
+   .then(function (dataUrl) { 
+     var etherpadDomain = "<%= ENV['ETHERPAD_URL'] %>"; 
+     var message = JSON.stringify({method: "addImage", args: dataUrl}); 
+     $("#epframeetherpad")[0].contentWindow.postMessage(message, etherpadDomain); 
+   })
+   .catch(function (error) { 
+     console.error("oops, something went wrong!", error); 
+   });
+ }
+
 </script>
 
 <div class="well">
@@ -21,6 +39,7 @@
         <% for name, index in presenter.frequency_options %>
           <li><%= link_to "Download #{name} data CSV", project_query_path(project, query, filter: { frequency: index }, format: :csv) %></li>
         <% end %>
+        <li><%= link_to "Add to pad", '#', onClick: 'javascript:addMCResultToPad();' %></li>
       </ul>
     </div>
   </div>
@@ -50,7 +69,11 @@
     <% end %>
   <% end %>
 
-  <table class="table frequency-table frequency-table-stacked margin-reset">
+<% if defined?(large_window) && large_window %>
+  <table class="table frequency-table frequency-table-stacked margin-reset" id="mc_result_frequency_large_table">
+<% else %>
+  <table class="table frequency-table frequency-table-stacked margin-reset" id="mc_result_frequency_small_table">
+<% end %>
     <tbody>
       <tr>
         <td>
