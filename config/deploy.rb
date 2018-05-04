@@ -2,7 +2,7 @@
 lock "3.8.1"
 
 set :application, "newsframes"
-set :repo_url, "git@github.com:globalvoices/NewsFrames.git"
+set :repo_url, "git@github.com:globalvoices/NewsFrames-Code.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
