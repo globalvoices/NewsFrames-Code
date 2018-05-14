@@ -4,9 +4,12 @@ var editor = require("ep_etherpad-lite/static/js/pad_editor").padeditor
   , _ = require("ep_etherpad-lite/static/js/underscore")._
   , availableMethods
   , postback = function (source, origin, object) {
+      var fn = availableMethods[object.method];
+      if (!fn) return;
+      
       var message = JSON.stringify({
         callbackKey: object.callbackKey,
-        data: availableMethods[object.method](object.args)
+        data: fn(object.args)
       });
       source.postMessage(message, origin);
     };
@@ -23,7 +26,7 @@ availableMethods = {
 };
 
 exports.aceInitialized = function (hook, context) {
-  var pluginSettings = window.ep_gv_insert_image || {
+  var pluginSettings = window.ep_gv_plugins || {
     domains: []
   };
 
