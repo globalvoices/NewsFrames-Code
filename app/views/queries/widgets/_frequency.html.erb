@@ -27,10 +27,13 @@
  }
 
  function addMCResultToPad() {
-   // when large table is visible, etherpad frame is not available, so no need to handle it
    var node = $('#mc_result_frequency_small_table');
-   if (node.is(":visible")) node = node[0];
-   if (node === null) return;
+   if (!node || !node.is(":visible")) {
+     node = $('#mc_result_frequency_large_table');
+   }
+
+   if (node && node.is(":visible")) node = node[0];
+   else return;
 
    showProgressBarInEtherpad();
 
