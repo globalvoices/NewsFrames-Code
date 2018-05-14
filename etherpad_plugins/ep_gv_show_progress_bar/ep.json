@@ -1,0 +1,15 @@
+{
+  "parts": [
+    {
+      "name": "ep_gv_show_progress_bar",
+      "hooks": {
+        "eejsBlock_styles": "ep_gv_show_progress_bar/index:eejsBlock_styles",
+        "eejsBlock_body": "ep_gv_show_progress_bar/index:eejsBlock_body",
+        "eejsBlock_scripts": "ep_gv_show_progress_bar/index:eejsBlock_scripts"
+      },
+      "client_hooks": {
+        "aceInitialized": "ep_gv_show_progress_bar/static/js/index:aceInitialized"
+      }
+    }
+  ]
+}

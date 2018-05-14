@@ -21,6 +21,7 @@ namespace :etherpad do
   task :deploy do
     on roles(:all) do
       execute "bash -l -c 'cd #{current_path}/../.. && rm -rf etherpad/node_modules/ep_gv_insert_image && cp -R #{current_path}/etherpad_plugins/ep_gv_insert_image etherpad/node_modules/ep_gv_insert_image/' > /dev/null 2>&1"
+      execute "bash -l -c 'cd #{current_path}/../.. && rm -rf etherpad/node_modules/ep_gv_show_progress_bar && cp -R #{current_path}/etherpad_plugins/ep_gv_show_progress_bar etherpad/node_modules/ep_gv_show_progress_bar/' > /dev/null 2>&1"
     end
   end
 
