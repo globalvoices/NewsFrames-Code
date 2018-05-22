@@ -1,0 +1,175 @@
+zh_TW:
+  locale_name: "英文"
+  attributes:
+    created_at: "建立時間"
+    updated_at: "上次更新"
+  activerecord:
+    models:
+      collaborator:
+        zero: "專題成員"
+        one: "專題成員"
+        other: "專題成員"
+      project:
+        zero: "專題"
+        one: "專題"
+        other: "專題"
+      user:
+        zero: "使用者"
+        one: "使用者"
+        other: "使用者"
+    attributes:
+      collaborator:
+        lead: "專題主持人"
+      project:
+        name: "名稱"
+      user:
+        admin: "管理員"
+        email: "電子郵件"
+        name: "使用者名稱"
+        password: "密碼"
+        password_confirmation: "確認密碼"
+        current_password: "目前的密碼"
+        language: "語言"
+  date:
+    formats:
+      default: "%b %d %Y"
+      short: "%b %d"
+      long: "%B %d %Y"
+  time:
+    formats:
+      default: "%b %d %Y %H:%M"
+      short: "%b %d %H:%M"
+      long: "%A, %B %d %Y %H:%M"
+      time_only: "%H:%M"
+  general:
+    title: "歡迎來到全球之聲的「新聞框架」平台"
+    heading: "新聞框架"
+    close: "關閉"
+    loading: "載入中⋯⋯"
+    back: '上一頁'
+    update: '更新'
+  landing:
+    welcome_user: "%{name}，歡迎"
+    intro: |-
+        看看專題範例 ，或者著手建立自己的專題。
+    read_more: "深入了解"
+    read_more_cont: "關於「新聞框架」倡議。"
+  menu:
+    home: "首頁"
+    about: "關於我們"
+    contact: "聯繫我們"
+    projects: "專題"
+    sign_out: "登出"
+    log_in: "登入"
+    sign_up: "註冊帳號"
+    admin: "管理員"
+  mail:
+    greeting: "%{name}你好"
+    thanks: "謝謝，"
+    from: "「新聞框架」團隊"
+    resource_names:
+      admin_dashboard: "管理員介面"
+      project: "這個專題"
+    invite:
+      accept: "你可以點擊以下連結來接受邀請：%{link}"
+  collaborators:
+    manage:
+      heading: "管理專題成員"
+      lead: "（專題主持人）"
+      you: "（你）"
+      confirm_delete: "你確定嗎？"
+    invite:
+      heading: "邀請新成員加入專題"
+      emails_placeholder: "輸入電子郵件地址，以空格或逗號加以分隔"
+      submit_button: "邀請"
+    mail:
+      invited: "你已被邀請加入「新聞框架」%{name}專題"
+  projects:
+    index:
+      lead:
+        heading: "我的專題"
+        empty_message: "你目前不是任何一個專題的主持人。"
+      shared:
+        heading: "分享給我的專題"
+        empty_message: " 目前沒有分享給你的專題。"
+      public:
+        heading: "公開的專題"
+      create_button: "建立專題"
+    edit:
+      heading: "編輯專題"
+    new:
+      heading: "建立專題"
+    show:
+      add_button: "+ 新增頁面"
+      edit_button: "編輯"
+      delete_button: "刪除"
+      delete_confirm: "你確定嗎？"
+      collaborators_button: "專題成員"
+      tools:
+        media_cloud: 'Media Cloud'
+        bias_detector: 'Bias Prism'
+        meme_mapper: 'Meme Mapper'
+        checklist: '清單'
+    form:
+      name: "名稱"
+      public: "公開"
+      checklists: "專題清單"
+      zombie_checklist_message: "已從系統刪除母清單"
+      submit: "送出"
+      cancel: "取消"
+      create: "建立"
+    sidebar:
+      learn_more: "深入了解"
+      intro: |-
+          %{link} 的一項倡議，透過資料分析，我們一同探討
+          「框架建構」或新聞報導的形塑，可能會如何影響全世界思考的方式
+      links:
+      - url: https://newsframes.globalvoices.org/2017/02/09/why-the-news-frame-matters/
+        title: 什麼是框架？（其重要性又何在？）
+      - url: https://newsframes.globalvoices.org/tools/how-to/
+        title: 開始建立專題
+  project_pads:
+    new:
+      heading: "建立頁面"
+    edit:
+      heading: "編輯頁面"
+  users:
+    profile:
+      need_current_password: "我們需要你目前的密碼，以確認所做變更"
+      edit_profile_title: "編輯個人檔案"
+    mail:
+      approved:
+        sign_in: "你可以從 %{link}登入，開始使用「新聞框架」平台。"
+      admin:
+        invite: "你已被邀請成為「新聞框架」的管理員之一。"
+        notice: "你現在是「新聞框架」的管理員之一"
+      registered:
+        welcome: "歡迎來到「新聞框架」!!"
+        approved: |-
+            帳號建立成功。你可以從 %{link} 登入。
+  checklists:
+    list:
+      heading: '清單'
+      complete: '完成'
+      submit_button: '送出'
+  tools:
+    bias_detector:
+      heading: 'Bias Prism'
+      input_data: '輸入資料'
+      input_data_placeholder: '在此輸入文字，以檢驗偏見'
+    media_cloud:
+      heading: "Media Cloud"
+      edit: "編輯"
+      delete: "刪除"
+      confirm: "你確定嗎？"
+      submit: "送出"
+      save: "儲存"
+      fetching: "自 Media Cloud 提取資料中⋯⋯"
+      max_stories_notice: "最多可提取新聞筆數：10,000"
+    meme_mapper:
+      heading: 'Meme Mapper'
+      delete: '刪除'
+      image_url: '圖片網址'
+      submit: '送出'
+      fetching: '資料提取中⋯⋯'
+      save: '儲存'

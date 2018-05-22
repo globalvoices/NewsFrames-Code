@@ -1,0 +1,67 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+zh_TW:
+  devise:
+    confirmations:
+      confirmed: "電子郵件地址確認成功。"
+      send_instructions: "你會在數分鐘之內收到一封電子郵件，告訴你如何 < 確認你的電子郵件地址 / 進行確認 >。"
+      send_paranoid_instructions: "如果我們的資料庫中有你的電子郵件地址，你會在數分鐘之內收到一封電子郵件，告訴你如何 < 確認你的電子郵件地址 / 進行確認 >。"
+    failure:
+      already_authenticated: "你已經登入。"
+      inactive: "帳號尚未開通。"
+      invalid: "%{authentication_keys} 或密碼無效。"
+      locked: "帳號已被鎖定。"
+      last_attempt: "若再一次重試失敗，帳號將會被鎖定。"
+      not_found_in_database: "%{authentication_keys} 或密碼無效。"
+      timeout: ""
+      unauthenticated: "需要登入或註冊以繼續。"
+      unconfirmed: "你必須先確認你的電子郵件地址，才能繼續。"
+      not_approved: ''
+      not_enabled: '你的帳號已被管理員 < 停權 >。'
+    mailer:
+      confirmation_instructions:
+        subject: "如何進行確認"
+      reset_password_instructions:
+        subject: "如何重設密碼"
+      unlock_instructions:
+        subject: "如何解鎖"
+      email_changed:
+        subject: "電子郵件地址已變更"
+      password_change:
+        subject: "密碼已變更"
+    omniauth_callbacks:
+      failure: "無法以 %{kind} 完成認證，因為「%{reason}」。"
+      success: "以 %{kind} 帳號 < 認證 > 成功。"
+    passwords:
+      no_token: ""
+      send_instructions: "你會在數分鐘之內收到一封電子郵件，告訴你如何重設密碼。"
+      send_paranoid_instructions: ""
+      updated: "密碼變更成功。現在是登入狀態。"
+      updated_not_active: "密碼變更成功。"
+    registrations:
+      destroyed: "帳號刪除成功。希望很快能再相見。拜～"
+      signed_up: "註冊成功。歡迎！"
+      signed_up_but_inactive: "註冊成功。但目前無法登入，因為帳號尚未開通。"
+      signed_up_but_locked: "註冊成功。但目前無法登入，因為帳號已被鎖定。"
+      signed_up_but_unconfirmed: "我們已將確認郵件寄送到你的電子郵件地址，請點擊內附連結，進行帳號開通。"
+      update_needs_confirmation: ""
+      updated: "帳號更新成功。"
+      user:
+        signed_up_but_not_approved: ''
+    sessions:
+      signed_in: "登入成功。"
+      signed_out: "登出成功。"
+      already_signed_out: "登出成功。"
+    unlocks:
+      send_instructions: "你會在數分鐘之內收到一封電子郵件，告訴你如何將帳號解鎖。"
+      send_paranoid_instructions: ""
+      unlocked: "帳號解鎖成功。請登入以繼續。"
+  errors:
+    messages:
+      already_confirmed: ""
+      confirmation_period_expired: ""
+      expired: ""
+      not_found: ""
+      not_locked: "未被鎖定"
+      not_saved:
+        other: 有 %{count} 處錯誤，因此無法儲存%{resource}：
