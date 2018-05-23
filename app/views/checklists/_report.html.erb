@@ -2,7 +2,7 @@
   <div class="spacing-half">
     <p>
       (<%= project.progress.round(2) %>% <%= t('checklists.list.complete_across_team') %>)
-      <a href="<%= project_checklist_report_path(project.id) %>">Run report</a>
+      <a href="<%= project_checklist_report_path(project.id) %>"><%= t('checklists.list.run_report') %></a>
     </p>
   </div>
 <% end %>
