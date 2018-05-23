@@ -9,6 +9,12 @@ class UsersController < Devise::RegistrationsController
     end
   end
 
+  def update
+    super do |user|
+      set_locale(user)
+    end
+  end
+
   private
 
   def sign_up_params
