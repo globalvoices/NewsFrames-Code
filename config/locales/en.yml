@@ -59,6 +59,7 @@ en:
         password_confirmation: "Password confirmation"
         current_password: "Current Password"
         language: "Language"
+        initials: "Initials/nickname"
 
   date:
     formats:
@@ -203,6 +204,7 @@ en:
       complete: 'complete'
       complete_across_team: 'complete across team'
       submit_button: 'Submit'
+      run_report: 'Run report'
 
   tools:
     bias_detector:
@@ -251,3 +253,5 @@ en:
       fetching: 'Fetching...'
       save: 'Save'
       save_search: 'Save Search'
+      instructions: |-
+        Into the textbox above, enter the URL of an image you would like to reverse image search. Learn more about our Meme Mapping effort <a href="https://newsframes.globalvoices.org/tools/using-meme-mapper/">here</a>.
