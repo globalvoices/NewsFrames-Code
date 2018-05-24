@@ -4,8 +4,8 @@ zh_TW:
   devise:
     confirmations:
       confirmed: "電子郵件地址確認成功。"
-      send_instructions: "你會在數分鐘之內收到一封電子郵件，告訴你如何 < 確認你的電子郵件地址 / 進行確認 >。"
-      send_paranoid_instructions: "如果我們的資料庫中有你的電子郵件地址，你會在數分鐘之內收到一封電子郵件，告訴你如何 < 確認你的電子郵件地址 / 進行確認 >。"
+      send_instructions: "你會在數分鐘之內收到一封電子郵件，告訴你如何進行確認。"
+      send_paranoid_instructions: "如果我們的資料庫中有你的電子郵件地址，你會在數分鐘之內收到一封電子郵件，告訴你如何進行確認。"
     failure:
       already_authenticated: "你已經登入。"
       inactive: "帳號尚未開通。"
@@ -13,11 +13,11 @@ zh_TW:
       locked: "帳號已被鎖定。"
       last_attempt: "若再一次重試失敗，帳號將會被鎖定。"
       not_found_in_database: "%{authentication_keys} 或密碼無效。"
-      timeout: ""
+      timeout: "操作逾時。請重新登入以繼續。"
       unauthenticated: "需要登入或註冊以繼續。"
       unconfirmed: "你必須先確認你的電子郵件地址，才能繼續。"
-      not_approved: ''
-      not_enabled: '你的帳號已被管理員 < 停權 >。'
+      not_approved: '帳號尚未通過管理員的審核。'
+      not_enabled: '你的帳號已被管理員停權。'
     mailer:
       confirmation_instructions:
         subject: "如何進行確認"
@@ -31,11 +31,11 @@ zh_TW:
         subject: "密碼已變更"
     omniauth_callbacks:
       failure: "無法以 %{kind} 完成認證，因為「%{reason}」。"
-      success: "以 %{kind} 帳號 < 認證 > 成功。"
+      success: "以 %{kind} 帳號認證成功。"
     passwords:
-      no_token: ""
+      no_token: "你必須由密碼重設電子郵件連結至此，否則無法存取此頁面。如果你確實由該電子郵件連結至此，請確認你使用的網址是否完整。"
       send_instructions: "你會在數分鐘之內收到一封電子郵件，告訴你如何重設密碼。"
-      send_paranoid_instructions: ""
+      send_paranoid_instructions: "如果我們的資料庫中有你的電子郵件地址，你會在數分鐘之內收到一封內附連結的電子郵件，幫助你重設密碼。"
       updated: "密碼變更成功。現在是登入狀態。"
       updated_not_active: "密碼變更成功。"
     registrations:
@@ -44,24 +44,24 @@ zh_TW:
       signed_up_but_inactive: "註冊成功。但目前無法登入，因為帳號尚未開通。"
       signed_up_but_locked: "註冊成功。但目前無法登入，因為帳號已被鎖定。"
       signed_up_but_unconfirmed: "我們已將確認郵件寄送到你的電子郵件地址，請點擊內附連結，進行帳號開通。"
-      update_needs_confirmation: ""
+      update_needs_confirmation: "帳號更新成功，但我們仍需驗證你的新電子郵件地址。請查看你的電子信箱，點擊確認郵件中的連結，以完成確認。"
       updated: "帳號更新成功。"
       user:
-        signed_up_but_not_approved: ''
+        signed_up_but_not_approved: '註冊成功。但帳號尚未通過管理員的審核。'
     sessions:
       signed_in: "登入成功。"
       signed_out: "登出成功。"
       already_signed_out: "登出成功。"
     unlocks:
       send_instructions: "你會在數分鐘之內收到一封電子郵件，告訴你如何將帳號解鎖。"
-      send_paranoid_instructions: ""
+      send_paranoid_instructions: "如果此帳號存在，你會在數分鐘之內收到一封電子郵件，告訴你如何將帳號解鎖。"
       unlocked: "帳號解鎖成功。請登入以繼續。"
   errors:
     messages:
-      already_confirmed: ""
-      confirmation_period_expired: ""
-      expired: ""
-      not_found: ""
+      already_confirmed: "已經確認，請嘗試登入"
+      confirmation_period_expired: "須在  %{period} 之內進行確認，請重新提出申請。"
+      expired: "已逾期，請重新提出申請"
+      not_found: "頁面不存在"
       not_locked: "未被鎖定"
       not_saved:
         other: 有 %{count} 處錯誤，因此無法儲存%{resource}：
