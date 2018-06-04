@@ -32,8 +32,8 @@ class QueriesController < ApplicationController
     Rollbar.error(err)
     render_error('^Media Cloud not responding')
   rescue Exception => err
-    puts err
     Rollbar.error(err)
+    Rails.logger.error(err)
     render_error('^Unexpected error')
   end
 
