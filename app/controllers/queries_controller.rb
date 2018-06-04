@@ -22,30 +22,34 @@ class QueriesController < ApplicationController
     Queries::Save.(query: @query, fetch_data: true)
     redirect_to project_query_path(project, @query)
   rescue ActiveRecord::RecordInvalid
-    render :new
-    respond_to(&:js)
+    render_error
   rescue MediaCloud::ParseError
-    @query.errors.add(:media_cloud_url, '^Unable to parse URL')
-    render :new
-    respond_to(&:js)
+    render_error('^Unable to parse URL')
   rescue Net::ReadTimeout
-    @query.errors.add(:media_cloud_url, '^Query timeout. Please try using Media Cloud directly')
-    render :new
-    respond_to(&:js)
-  rescue Exception => err
+    render_error('^Query timeout. Please try using Media Cloud directly')
+  rescue MediaCloudQuery::APIError
     puts err
     Rollbar.error(err)
-    @query.errors.add(:media_cloud_url, '^Unexpected error')
-    render :new
-    respond_to(&:js)
+    render_error('^Media Cloud not responding')
+  rescue Exception => err
+    Rollbar.error(err)
+    Rails.logger.error(err)
+    render_error('^Unexpected error')
   end
 
   def show
     respond_to do |format|
       format.js
       format.csv do
-        Queries::DownloadFullData.(query: query)
-        send_data(presenter.render_csv, type: 'text/csv', filename: csv_file_name, disposition: :attachment.to_s)
+        begin
+          Queries::DownloadFullData.(query: query)
+          send_data(presenter.render_csv, type: 'text/csv', filename: csv_file_name, disposition: :attachment.to_s)
+        rescue MediaCloudQuery::APIError
+          puts err
+          Rollbar.error(err)
+          flash[:error] = 'Media Cloud not responding'
+          redirect_to project_path(project)
+        end
       end
     end
   end
@@ -92,5 +96,11 @@ class QueriesController < ApplicationController
   def csv_file_name
     filterName = filter[:frequency].present? ? :frequency.to_s : :stories.to_s
     "#{project.name}-#{query.name}-#{DateTime.now}-#{filterName}.csv"
+  end
+
+  def render_error(error = '')
+    @query.errors.add(:media_cloud_url, error) if error.present?
+    render :new
+    respond_to(&:js)
   end
 end
