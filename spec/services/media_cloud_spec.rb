@@ -33,6 +33,22 @@ describe MediaCloud do
         expect { described_class.parse_url(url) }.to raise_error(MediaCloud::ParseError)
       end
     end
+
+    context 'missing quote escapes' do
+      let(:url) { 'https://explorer.mediacloud.org/#/queries/search?q=[{"label": " "Foo" ","q": ""foo"", "color": "%23e14c11", "startDate": "2017-01-01", "endDate": "2017-01-03", "sources": [], "collections": [123]}]' }
+
+      it 'parses malformed JSON' do
+        result = described_class.parse_url(url)
+        expect(result.length).to eq 1
+
+        expect(result.first).to be_a MediaCloud::QueryParams
+        expect(result.first.keywords).to eq '"foo"'
+        expect(result.first.media).to eq({ sets: [123], sources: [] })
+        expect(result.first.start_date).to eq '2017-01-01'
+        expect(result.first.end_date).to eq '2017-01-03'
+        expect(result.first.meta).to eq({ name: ' "Foo" ', color: 'e14c11' })
+      end
+    end
   end
 
   describe described_class::QueryParams do
