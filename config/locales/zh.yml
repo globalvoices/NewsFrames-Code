@@ -1,4 +1,4 @@
-zh:
+zh_TW:
   locale_name: "英文"
   attributes:
     created_at: "建立時間"
@@ -33,6 +33,7 @@ zh:
         password_confirmation: "確認密碼"
         current_password: "目前的密碼"
         language: "語言"
+        initials: "姓名縮寫／暱稱"
   date:
     formats:
       default: "%b %d %Y"
@@ -45,19 +46,20 @@ zh:
       long: "%A, %B %d %Y %H:%M"
       time_only: "%H:%M"
   general:
-    title: "歡迎來到全球之聲的「新聞框架」平台"
-    heading: "新聞框架"
+    title: "歡迎來到全球之聲的 NewsFrames 平台"
+    heading: "NewsFrames"
     close: "關閉"
+    toggle_navigation: "顯示選單"
     loading: "載入中⋯⋯"
     back: '上一頁'
     update: '更新'
   landing:
     welcome_user: "%{name}，歡迎"
-    welcome_anonymous: "歡迎來到「新聞框架」── %{link} 的一項倡議計畫"
+    welcome_anonymous: "歡迎來到 NewsFrames ── %{link} 的一項倡議計畫"
     intro: |-
         看看專題範例 ，或者著手建立自己的專題。
     read_more: "深入了解"
-    read_more_cont: "關於「新聞框架」倡議。"
+    read_more_cont: "NewsFrames 倡議。"
   menu:
     home: "首頁"
     about: "關於我們"
@@ -71,7 +73,7 @@ zh:
   mail:
     greeting: "%{name}你好"
     thanks: "謝謝，"
-    from: "「新聞框架」團隊"
+    from: "NewsFrames 團隊"
     resource_link: "登入後，你便可以在 %{link} 找到%{resource_name}"
     resource_names:
       admin_dashboard: "管理員介面"
@@ -89,7 +91,7 @@ zh:
       emails_placeholder: "輸入電子郵件地址，以空格或逗號加以分隔"
       submit_button: "邀請"
     mail:
-      invited: "你已被邀請加入「新聞框架」%{name}專題"
+      invited: "你已被邀請加入 NewsFrames %{name}專題"
   projects:
     index:
       lead:
@@ -125,7 +127,7 @@ zh:
       cancel: "取消"
       create: "建立"
     sidebar:
-      learn_more: "深入了解"
+      learn_more: "進一步了解"
       intro: |-
           %{link} 的一項倡議，透過資料分析，我們一同探討
           「框架建構」或新聞報導的形塑，可能會如何影響全世界思考的方式
@@ -146,13 +148,13 @@ zh:
       edit_profile_title: "編輯個人檔案"
     mail:
       approved:
-        welcome: "歡迎加入我們的行列。你的「新聞框架」帳號已通過審核。"
-        sign_in: "你可以從 %{link}登入，開始使用「新聞框架」平台。"
+        welcome: "歡迎加入我們的行列。你的 NewsFrames 帳號已通過審核。"
+        sign_in: "你可以從 %{link}登入，開始使用 NewsFrames 平台。"
       admin:
-        invite: "你已被邀請成為「新聞框架」的管理員之一。"
-        notice: "你現在是「新聞框架」的管理員之一"
+        invite: "你已被邀請成為 NewsFrames 的管理員之一。"
+        notice: "你現在是 NewsFrames 的管理員之一"
       registered:
-        welcome: "歡迎來到「新聞框架」!!"
+        welcome: "歡迎來到 NewsFrames !!"
         approved: |-
             帳號建立成功。你可以從 %{link} 登入。
         unapproved: |-
@@ -161,25 +163,53 @@ zh:
     list:
       heading: '清單'
       complete: '完成'
+      complete_across_team: '已被此專題所有成員標記為完成'
       submit_button: '送出'
   tools:
     bias_detector:
       heading: 'Bias Prism'
       input_data: '輸入資料'
       input_data_placeholder: '在此輸入文字，以檢驗偏見'
+      submit_button: '以 Prism 進行檢驗'
+      submit_button_table: '以表格顯示標準化檢驗結果'
+      submit_button_normalized: '下載標準化檢驗結果'
+      information_message: |-
+          在上面的欄位中貼入英文文字，然後點擊欄位下方的按鈕。
+          查詢結果 are available either via CSV files or an HTML display. 你可以參考
+          <a href="www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">this paper</a>和這篇<a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">指南</a>，來進一步了解這些數字的意義。
+          <br><br>
+          This functionality, a collaboration with
+          <a href="http://www.socialai.gatech.edu/" target="_blank">喬治亞理工學院的「行為模式與
+          Computational Social Systems 」團隊</a>, is experimental and undergoing active research.
+          如果有任何疑問，請聯繫 NewsFrames 團隊。
+
+          < 計算社會科學 / 運算社會科學 / 計量社會科學 >
     media_cloud:
       heading: "Media Cloud"
+      saved_searches: "儲存查詢參數"
       edit: "編輯"
       delete: "刪除"
       confirm: "你確定嗎？"
+      query_term: "簡易查詢或網址查詢"
+      instructions: |-
+          在上面的欄位中：
+          <ul>
+          <li>輸入關鍵字——以便在 Media Cloud 的資料庫中，查詢過去一年裡，全美 50 大網路新聞媒體的資料；或是</li>
+          <li>輸入你自訂的 Media Cloud 查詢參數——請先到<a target="_blank" href="https://explorer.mediacloud.org/">這裡</a>進行查詢，將查詢參數儲存為一專屬網址，再將此網址貼入</li>
+          </ul>
       submit: "送出"
       save: "儲存"
+      save_search: "儲存查詢參數"
       fetching: "自 Media Cloud 提取資料中⋯⋯"
       max_stories_notice: "最多可提取新聞筆數：10,000"
     meme_mapper:
       heading: 'Meme Mapper'
+      saved_searches: '儲存查詢參數'
       delete: '刪除'
       image_url: '圖片網址'
       submit: '送出'
       fetching: '資料提取中⋯⋯'
       save: '儲存'
+      save_search: '儲存查詢參數'
+      instructions: |-
+          在上面的欄位中，輸入你想進行反向查詢的圖片網址。想進一步了解我們在 Meme Mapping 背後所作出的努力，請到<a href="https://newsframes.globalvoices.org/tools/using-meme-mapper/">這裡</a>。
