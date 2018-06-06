@@ -33,6 +33,7 @@ fr:
         password_confirmation: "Confirmation mot de passe"
         current_password: "Mot de passe actuel"
         language: "Langue"
+        initials: "Initiales/pseudo"
   date:
     formats:
       default: "%b %d %Y"
@@ -48,7 +49,7 @@ fr:
     title: "Bienvenue sur Global Voices NewsFrames"
     heading: "NewsFrames"
     close: "Fermer"
-    toggle_navigation: "fermer la navigation"
+    toggle_navigation: "dérouler le menu"
     loading: "Chargement..."
     back: 'Retour'
     update: 'Mise à jour'
@@ -166,6 +167,7 @@ fr:
       complete: 'complétés'
       complete_across_team: 'complétés au sein de l''équipe'
       submit_button: 'Envoyer'
+      run_report: 'Exécuter le rapport'
   tools:
     bias_detector:
       heading: 'Bias Prism'
@@ -211,3 +213,5 @@ fr:
       fetching: 'Extraction...'
       save: 'Enregistrer'
       save_search: 'Sauvegarder la recherche'
+      instructions: |-
+          Entrer dans le champ de texte ci-dessus l'URL de l'image pour laquelle vous souhaitez faire une recherche d'image inversée. En savoir plus sur notre démarche Meme Mapping <a href="https://newsframes.globalvoices.org/tools/using-meme-mapper/">ici</a>.
