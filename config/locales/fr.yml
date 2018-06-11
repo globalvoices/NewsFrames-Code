@@ -52,7 +52,7 @@ fr:
     toggle_navigation: "dérouler le menu"
     loading: "Chargement..."
     back: 'Retour'
-    update: 'Mise à jour'
+    update: 'Modifier'
   landing:
     welcome_user: "Bienvenue %{name}"
     welcome_anonymous: "Bienvenue sur NewsFrames, un projet de %{link}"
@@ -89,7 +89,7 @@ fr:
     invite:
       heading: "Inviter des collaborateurs"
       emails_placeholder: "Entrez plusieurs adresses séparées avec des espaces ou virgules"
-      submit_button: "Invitation"
+      submit_button: "Inviter"
     mail:
       invited: "Vous avez été invité-e à collaborer à ce projet de NewsFrames : %{name}"
   projects:
@@ -171,7 +171,7 @@ fr:
   tools:
     bias_detector:
       heading: 'Bias Prism'
-      input_data: 'données saisies'
+      input_data: 'saisir les données'
       input_data_placeholder: 'Entrer du texte ici pour inspection si biais'
       submit_button: 'Exécuter Prism'
       submit_button_table: 'Afficher le tableau'
