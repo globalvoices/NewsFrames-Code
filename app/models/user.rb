@@ -21,7 +21,7 @@
 #  invitations_count      :integer          default(0)
 #  approved               :boolean          default(FALSE), not null
 #  author_id              :string
-#  language               :string           default("eng"), not null
+#  language               :string           default("en_US"), not null
 #  enabled                :boolean          default(TRUE), not null
 #  initials               :string
 #

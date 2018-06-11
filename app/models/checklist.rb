@@ -17,14 +17,14 @@ class Checklist < ApplicationRecord
   alias_attribute :items, :checklist_items
 
   translates :name
-  globalize_accessors :locales => [:eng], :attributes => [:name]
+  globalize_accessors :locales => [:en_US], :attributes => [:name]
 
   def cache_key
     super + '-' + Globalize.locale.to_s
   end
 
   def available_translations
-    self.translations.map(&:locale).reject { |entry| entry == :eng || entry == :en }
+    self.translations.map(&:locale).reject { |entry| entry == 'en_US' || entry == 'en' }
   end
 
   def with_translation(locale, fallback_locale = nil)
@@ -34,9 +34,9 @@ class Checklist < ApplicationRecord
     self.translations.where(locale: fallback_locale).first
   end
 
-  def with_translation_in_current_locale(fallback_locale='eng')
-    current_locale = ISO_639.find(I18n.locale.to_s).alpha3
+  def with_translation_in_current_locale(fallback_locale='en_US')
+    current_locale = I18n.locale.to_s
     with_translation(current_locale, fallback_locale)
   end
-  
+
 end

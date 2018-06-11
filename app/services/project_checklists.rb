@@ -42,7 +42,7 @@ module ProjectChecklists
       project_checklist_items = []
       ActiveRecord::Base.transaction do
 
-        Globalize.with_locale :eng do
+        Globalize.with_locale :en_US do
           project_checklist = ProjectChecklist.new(name: checklist.name,
                                                    project: project,
                                                    checklist: checklist)
@@ -95,5 +95,5 @@ module ProjectChecklists
       end
     end
   end
-  
+
 end

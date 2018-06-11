@@ -22,7 +22,7 @@ module CollaboratorChecklists
       end
 
       new_checklist
-      
+
     end
   end
 
@@ -35,7 +35,7 @@ module CollaboratorChecklists
       ActiveRecord::Base.transaction do
         checklist.destroy
       end
-      
+
     end
   end
 
@@ -49,8 +49,8 @@ module CollaboratorChecklists
 
       ActiveRecord::Base.transaction do
 
-        Globalize.with_locale :eng do
-        
+        Globalize.with_locale :en_US do
+
           checklist_items.each do |item|
             raise ArgumentError, 'invalid project or checklist item' unless item.project_checklist_item.project == collaborator.project
             item.check!
@@ -67,7 +67,7 @@ module CollaboratorChecklists
           end
 
         end
-        
+
       end
     end
   end
