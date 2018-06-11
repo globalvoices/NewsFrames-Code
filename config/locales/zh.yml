@@ -71,10 +71,10 @@ zh:
     sign_up: "註冊帳號"
     admin: "管理員"
   mail:
-    greeting: "%{name}你好"
+    greeting: "%{name} 你好"
     thanks: "謝謝，"
     from: "NewsFrames 團隊"
-    resource_link: "登入後，你便可以在 %{link} 找到%{resource_name}"
+    resource_link: "登入後，你便可以在 %{link} 找到 %{resource_name}"
     resource_names:
       admin_dashboard: "管理員介面"
       project: "這個專題"
@@ -91,7 +91,7 @@ zh:
       emails_placeholder: "輸入電子郵件地址，以空格或逗號加以分隔"
       submit_button: "邀請"
     mail:
-      invited: "你已被邀請加入 NewsFrames %{name}專題"
+      invited: "你已被邀請加入 NewsFrames %{name} 專題"
   projects:
     index:
       lead:
@@ -149,7 +149,7 @@ zh:
     mail:
       approved:
         welcome: "歡迎加入我們的行列。你的 NewsFrames 帳號已通過審核。"
-        sign_in: "你可以從 %{link}登入，開始使用 NewsFrames 平台。"
+        sign_in: "你可以從%{link}登入，開始使用 NewsFrames 平台。"
       admin:
         invite: "你已被邀請成為 NewsFrames 的管理員之一。"
         notice: "你現在是 NewsFrames 的管理員之一"
@@ -165,6 +165,7 @@ zh:
       complete: '完成'
       complete_across_team: '已被此專題所有成員標記為完成'
       submit_button: '送出'
+      run_report: '下載完整 CSV 檔案'
   tools:
     bias_detector:
       heading: 'Bias Prism'
@@ -172,18 +173,16 @@ zh:
       input_data_placeholder: '在此輸入文字，以檢驗偏見'
       submit_button: '以 Prism 進行檢驗'
       submit_button_table: '以表格顯示標準化檢驗結果'
+      submit_button_extended: '下載完整 CSV 檔案'
       submit_button_normalized: '下載標準化檢驗結果'
       information_message: |-
           在上面的欄位中貼入英文文字，然後點擊欄位下方的按鈕。
-          查詢結果 are available either via CSV files or an HTML display. 你可以參考
-          <a href="http://www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">this paper</a>和這篇<a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">指南</a>，來進一步了解這些數字的意義。
+          查詢結果可以 CSV 檔案的形式下載，也可以 HTML 直接顯示。你可以參考
+          <a href="http://www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">這篇論文</a>和這個<a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">指南</a>，來進一步了解這些數字的意義。
           <br><br>
-          This functionality, a collaboration with
-          <a href="http://www.socialai.gatech.edu/" target="_blank">喬治亞理工學院的「行為模式與
-          Computational Social Systems 」團隊</a>, is experimental and undergoing active research.
+          Bias Prism 是全球之聲與
+          <a href="http://www.socialai.gatech.edu/" target="_blank">喬治亞理工學院「行為模式與計算社會科學」［Behavioral Modeling and Computational Social Science］團隊</a>的合作成果，目前尚在試驗階段，我們仍在不斷研究、希望 Bias Prism 能越臻完善。
           如果有任何疑問，請聯繫 NewsFrames 團隊。
-
-          < 計算社會科學 / 運算社會科學 / 計量社會科學 >
     media_cloud:
       heading: "Media Cloud"
       saved_searches: "儲存查詢參數"
