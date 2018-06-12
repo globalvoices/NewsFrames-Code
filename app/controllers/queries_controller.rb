@@ -27,7 +27,7 @@ class QueriesController < ApplicationController
     render_error('^Unable to parse URL')
   rescue Net::ReadTimeout
     render_error('^Query timeout. Please try using Media Cloud directly')
-  rescue MediaCloudQuery::APIError
+  rescue MediaCloudQuery::APIError => err
     puts err
     Rollbar.error(err)
     render_error('^Media Cloud not responding')
