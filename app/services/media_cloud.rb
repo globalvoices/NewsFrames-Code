@@ -36,7 +36,7 @@ class MediaCloud
     end
 
     def solr_q
-      "sentence:#{keywords}"
+      keywords
     end
 
     def solr_fq
