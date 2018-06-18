@@ -59,7 +59,7 @@ describe MediaCloud do
     end
 
     describe '#solr_q' do
-      it { expect(params.solr_q).to eq 'sentence:foo' }
+      it { expect(params.solr_q).to eq 'foo' }
     end
 
     describe '#solr_fq' do
