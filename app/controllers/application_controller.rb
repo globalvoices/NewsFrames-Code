@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     user ||= current_user
     if user.present?
       begin
-        I18n.locale = ISO_639.find(user.language).try(:alpha2) || I18n.default_locale
+        I18n.locale = user.language || I18n.default_locale
       rescue I18n::InvalidLocale
         I18n.locale = I18n.default_locale
       end

@@ -1,7 +1,7 @@
 module Checklists
 
   class Create
-    
+
     def self.call(params)
       name = params[:name]
       raise ArgumentError, 'missing name' unless name.present?
@@ -12,12 +12,12 @@ module Checklists
       checklist = nil
       ActiveRecord::Base.transaction do
 
-        Globalize.with_locale :eng do
+        Globalize.with_locale :en_US do
           checklist = Checklist.new(name: name)
           checklist.save!
 
           items.each do |entry|
-            checklist_item = ChecklistItem.new(checklist_id: checklist.id, 
+            checklist_item = ChecklistItem.new(checklist_id: checklist.id,
                                                item: entry[:item],
                                                help: entry[:help])
             checklist_item.save!
@@ -37,7 +37,7 @@ module Checklists
       name = params[:name]
       raise ArgumentError, 'missing name' unless name.present?
 
-      Globalize.with_locale :eng do
+      Globalize.with_locale :en_US do
         checklist.name = name
         checklist.save!
       end
@@ -56,7 +56,7 @@ module Checklists
 
       localized_name = params[:name]
       raise ArgumentError, 'missing name' unless localized_name.present?
-      
+
       language = params[:language]
       raise ArgumentError, 'missing language' unless language.present?
 
@@ -85,7 +85,7 @@ module Checklists
     def self.call(params)
       checklist = params[:checklist]
       raise ArgumentError, 'missing checklist' unless checklist.present?
-      
+
       language = params[:language]
       raise ArgumentError, 'missing language' unless language.present?
 
@@ -93,7 +93,7 @@ module Checklists
       raise ArgumentError, 'missing name' unless name.present?
 
       raise ServiceError, 'Translation does not exist in this language' unless checklist.available_translations.include?(language.to_sym)
-      
+
       Globalize.with_locale language do
         checklist.name = name
         checklist.save!
@@ -106,7 +106,7 @@ module Checklists
     def self.call(params)
       checklist = params[:checklist]
       raise ArgumentError, 'missing checklist' unless checklist.present?
-      
+
       language = params[:language]
       raise ArgumentError, 'missing language' unless language.present?
 
@@ -128,7 +128,7 @@ module Checklists
 
       return checklist if checklist.enabled?
 
-      Globalize.with_locale :eng do
+      Globalize.with_locale :en_US do
         checklist.enabled = true
         checklist.save!
       end
@@ -142,7 +142,7 @@ module Checklists
 
       return checklist unless checklist.enabled?
 
-      Globalize.with_locale :eng do
+      Globalize.with_locale :en_US do
         checklist.enabled = false
         checklist.save!
       end

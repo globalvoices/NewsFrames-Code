@@ -1,0 +1,477 @@
+Abkhaz, ab
+Acoli, ach
+Adyghe, ady
+Afar-Djibouti, aa_DJ
+Afrikaans, af
+Afrikaans-South Africa, af_ZA
+Akan, ak
+Albanian, sq
+Albanian-Albania, sq_AL
+Albanian Gheg, aln
+Amharic, am
+Amharic-Ethiopia, am_ET
+Arabic, ar
+Arabic-Algeria, ar_DZ
+Arabic-Egypt, ar_EG
+Arabic-Jordan, ar_JO
+Arabic-Lebanon, ar_LB
+Arabic-Saudi Arabia, ar_SA
+Arabic-Sudan, ar_SD
+Arabic-Syria, ar_SY
+Arabic-U.A.E., ar_AE
+Arabic-Unitag, ar_AA
+Aragonese, an
+Armenian, hy
+Armenian-Armenia, hy_AM
+Assamese, as
+Assamese-India, as_IN
+Asturian, ast
+Asturian-Spain, ast_ES
+Azerbaijani, az
+Azerbaijani-Arabic, az@Arab
+Azerbaijani-Azerbaijan, az_AZ
+Azerbaijani-Iran, az_IR
+Azerbaijani-Latin, az@latin
+Balochi, bal
+Bashkir, ba
+Basque, eu
+Basque-Spain, eu_ES
+Bavarian, bar
+Belarusian, be
+Belarusian-Belarus, be_BY
+Belarusian-Tarask, be@tarask
+Bemba, bem
+Bemba-Zambia, bem_ZM
+Bengali, bn
+Bengali-Bangladesh, bn_BD
+Bengali-India, bn_IN
+Bodo, brx
+Bosnian, bs
+Bosnian-Bosnia and Herzegovina, bs_BA
+Breton, br
+Breton-France, br_FR
+Bulgarian, bg
+BulgarianBulgaria, bg_BG
+Burmese, my
+BurmeseMyanmar, my_MM
+Catalan, ca
+CatalanSpain, ca_ES
+CatalanValencian, ca@valencia
+Cebuano, ceb
+Central Atlas Tamazight, tzm
+Central Kurdish, ckb
+Cherokee, chr
+Chhattisgarhi, hne
+Chiga, cgg
+Chinese, zh
+Chinese-China, zh_CN
+Chinese-China-GB2312, zh_CN.GB2312
+Chinese-Gan, gan
+Chinese-Hakka, hak
+Chinese-Hong Kong, zh_HK
+Chinese-Huizhou, czh
+Chinese-Jinyu, cjy
+Chinese-Literary, lzh
+Chinese-Mandarin, cmn
+Chinese-Min Bei, mnp
+Chinese-Min Dong, cdo
+Chinese-Min Nan, nan
+Chinese-Min Zhong, czo
+Chinese-Pu-Xian, cpx
+Chinese Simplified, zh-Hans
+Chinese-Singapore, zh_SG
+Chinese-Taiwan, zh_TW
+Chinese-Taiwan-Big5, zh_TW.Big5
+Chinese Traditional, zh-Hant
+Chinese-Wu, wuu
+Chinese-Xiang, hsn
+Chinese-Yue, yue
+Chuvash, cv
+Colognian, ksh
+Cornish, kw
+Corsican, co
+Crimean Turkish, crh
+Croatian, hr
+Croatian-Croatia, hr_HR
+Czech, cs
+Czech-Czech Republic, cs_CZ
+Danish, da
+Danish-Denmark, da_DK
+Divehi, dv
+Dogri, doi
+Dutch, nl
+Dutch-Belgium, nl_BE
+Dutch-Netherlands, nl_NL
+Dzongkha,dz
+Dzongkha-Bhutan, dz_BT
+English, en
+English-Australia, en_AU
+English-Austria, en_AT
+English-Bangladesh, en_BD
+English-Belgium, en_BE
+English-Canada, en_CA
+English-Chile, en_CL
+English-Croatia, en_HR
+English-Cyprus, en_CY
+English-Czech Republic, en_CZ
+English-Denmark, en_DK
+English-Egypt, en_EG
+English-Estonia, en_ee
+English-Finland, en_FI
+English-Germany, en_DE
+English-Ghana, en_GH
+English-Greece, en_GR
+English-Hong Kong, en_HK
+English-Hungary, en_HU
+English-India, en_IN
+English-Ireland, en_IE
+English-Italy, en_IT
+English-Latvia, en_lv
+English-Lithuania, en_lt
+English-Malaysia, en_MY
+English-Netherlands, en_NL
+English-New Zealand, en_NZ
+English-Nigeria, en_NG
+English-Norway, en_NO
+English-Pakistan, en_PK
+English-Philippines, en_PH
+English-Poland, en_PL
+English-Portugal, en_PT
+English-Puerto Rico, en_PR
+English-Romania, en_RO
+English-Singapore, en_SG
+English-Slovakia, en_SK
+English-South Africa, en_ZA
+English-Spain, en_ES
+English-Sri Lanka, en_LK
+English-Sweden, en_SE
+English-Switzerland, en_CH
+English-Uganda, en_UG
+English-United Arab Emirates, en_AE
+English-United Kingdom, en_GB
+English-United States, en_US
+English-Zambia, en_ZM
+Erzya, myv
+Esperanto, eo
+Estonian, et
+Estonian-Estonia, et_EE
+Faroese, fo
+Faroese-Faroe Islands, fo_FO
+Filipino, fil
+Filipino-Philippines, fil_PH
+Finnish, fi
+Finnish-Finland, fi_FI
+Franco-Provençal-Arpitan, frp
+French, fr
+French-Belgium, fr_BE
+French-Cameroon, fr_CM
+French-Canada, fr_CA
+French-Côte d'Ivoire, fr_CI
+French-France, fr_FR
+French-Gabon, fr_GA
+French-Switzerland, fr_CH
+Friulian, fur
+Fulah, ff
+Fulah-Senegal, ff_SN
+Gaelic-Scottish, gd
+Galician, gl
+Galician-Spain, gl_ES
+Ganda, lg
+Ganda-Uganda, lg_UG
+Georgian, ka
+Georgian-Georgia, ka_GE
+German, de
+German-Austria, de_AT
+German-Germany, de_DE
+German-Switzerland, de_CH
+Greek, el
+Greek-Cyprus, el_CY
+Greek-Germany, el_DE
+Greek-Greece, el_GR
+Greenlandic, kl
+Guarani-Paraguay, gug_PY
+Gujarati, gu
+Gujarati-India, gu_IN
+Gun, gun
+Haitian-Haitian Creole, ht
+Haitian-Haitian Creole-Haiti, ht_HT
+Hausa, ha
+Hawaiian, haw
+Hebrew, he
+Hebrew-Israel, he_IL
+Hindi, hi
+Hindi-India, hi_IN
+Hungarian, hu
+Hungarian-Hungary, hu_HU
+Hungarian-Romanian, hu_RO
+Icelandic, is
+Icelandic-Iceland, is_IS
+Ido, io
+Igbo, ig
+Iloko, ilo
+Indonesian, id
+Indonesian-Indonesia, id_ID
+Interlingua, ia
+Inuktitut, iu
+Irish, ga
+Irish-Ireland, ga_IE
+Italian, it
+Italian-Italy, it_IT
+Italian-Switzerland, it_CH
+Japanese, ja
+Japanese-Hiragana, ja-Hira
+Japanese-Japan, ja_JP
+Javanese, jv
+Kabardian, kbd
+Kabyle, kab
+Kannada, kn
+Kannada-India, kn_IN
+Kaonde, kqn
+Kapampangan, pam
+Kaqchikel, cak
+Karelian, krl
+Kashmiri, ks
+Kashmiri-India, ks_IN
+Kashubian, csb
+Kazakh, kk
+Kazakh-Arabic, kk@Arab
+Kazakh-Cyrillic, kk@Cyrl
+Kazakh-Kazakhstan, kk_KZ
+Kazakh-Latin, kk@latin
+Khmer, km
+Khmer-Cambodia, km_KH
+K'iche', quc
+Kinyarwanda, rw
+Klingon, tlh
+Konkani, kok
+Korean, ko
+Korean-Korea, ko_KR
+Kurdish, ku
+Kurdish-Iraq, ku_IQ
+Kyrgyz, ky
+Kyrgyz-Arabic, ky@Arab
+Ladino, lad
+Lakota, lkt
+Lao, lo
+Lao-Laos, lo_LA
+Latgalian, ltg
+Latin, la
+Latvian, lv
+Latvian-Latvia, lv_LV
+Lezghian, lez
+Libyan Arabic, ayl
+Ligurian, lij
+Limburgian, li
+Lingala, ln
+Lithuanian, lt
+Lithuanian-Lithuania, lt_LT
+Lojban, jbo
+LOLCAT English, en@lolcat
+Lombard, lmo
+Lower Sorbian, dsb
+Low German, nds
+Lozi-Zambia, loz_ZM
+Luvale, lue
+Luxembourgish, lb
+Macedonian, mk
+Macedonian-Macedonia, mk_MK
+Maithili, mai
+Malagasy, mg
+Malay, ms
+Malayalam, ml
+Malayalam-India, ml_IN
+Malay-Arabic, ms@Arab
+Malay-Brunei, ms_BN
+Malay-Malaysia, ms_MY
+Maltese, mt
+Maltese-Malta, mt_MT
+Manipuri, mni
+Maori, mi
+Mapudungun, arn
+Marathi, mr
+Marathi-India, mr_IN
+Marshallese, mh
+Mirandese, mw1
+Mongolian, mn
+Mongolian-Mongolia, mn_MN
+Nahuatl, nah
+Navajo, nv
+Ndebele, North, nd
+Ndebele, South, nr
+Neapolitan, nap
+Nepali, ne
+Nepali-Nepal, ne_NP
+Nias, nia
+N'ko, nqo
+Northern Sami, se
+Northern Sotho, nso
+Norwegian, no
+Norwegian Bokmål, nb
+Norwegian Bokmål-Norway, nb_NO
+NorwegianNorway, no_NO
+Norwegian Nynorsk, nn
+Norwegian Nynorsk-Norway, nn_NO
+Nyanja, ny
+Occitan-post 1500, oc
+Oriya, or
+Oriya-India, or_IN
+Oromo, om
+Ossetic, os
+Palatinate German, pfl
+Panjabi-Punjabi, pa
+Panjabi-Punjabi-India, pa_IN
+Papiamento, pap
+Persian, fa
+Persian-Afghanistan, fa_AF
+Persian-Iran, fa_IR
+Piemontese, pms
+Pirate English, en@pirate
+Polish, pl
+Polish-Poland, pl_PL
+Portuguese, pt
+Portuguese-Brazil, pt_BR
+Portuguese-Mozambique, pt_MZ
+Portuguese-Portugal, pt_PT
+Pushto, ps
+Quechua, qu
+Romanian, ro
+Romanian-Moldova, ro_MD
+Romanian-Romania, ro_RO
+Romansh, rm
+Russian, ru
+Russian-Estonia, ru_ee
+Russian-Latvia, ru_lv
+Russian-Lithuania, ru_lt
+Russian Petrine orthography, ru@petr1708
+Russian-Russia, ru_RU
+Russian-Ukraine, ru_UA
+Sakha-Yakut, sah
+Samoan, sm
+Sango, sg
+Sanskrit, sa
+Santali, sat
+Sardinian, sc
+Scots, sco
+Serbian, sr
+Serbian-Cyrillic, sr@Cyrl
+Serbian-Ijekavian, sr@Ijekavian
+Serbian-Ijekavian Latin, sr@ijekavianlatin
+Serbian-Latin, sr@latin
+Serbian-Latin-Bosnia and Herzegovina, sr_BA@latin
+Serbian-Latin-Montenegro, sr_ME@latin
+Serbian-Latin-Serbia, sr_RS@latin
+Serbian-Montenegro, sr_ME
+Serbian-Serbia, sr_RS
+Shona, sn
+Sicilian, scn
+Silesian, szl
+Sindhi, sd
+Sinhala, si
+Sinhala-Sri Lanka, si_LK
+Slovak, sk
+Slovak-Slovakia, sk_SK
+Slovenian, sl
+Slovenian-Slovenia, sl_SI
+Somali, so
+Songhay, son
+Sotho-Southern, st
+Sotho-Southern-South Africa, st_ZA
+South Bolivian Quechua, quh
+Southern Sami, sma
+Spanish, es
+Spanish-Argentina, es_AR
+Spanish-Bolivia, es_BO
+Spanish-Chile, es_CL
+Spanish-Colombia, es_CO
+Spanish-Costa Rica, es_CR
+Spanish-Dominican Republic, es_DO
+Spanish-Ecuador, es_EC
+Spanish-El Salvador, es_SV
+Spanish-Guatemala, es_GT
+Spanish-Honduras, es_HN
+Spanish-Latin America, es_419
+Spanish-Mexico, es_MX
+Spanish-Nicaragua, es_NI
+Spanish-Panama, es_PA
+Spanish-Paraguay, es_PY
+Spanish-Peru, es_PE
+Spanish-Puerto Rico, es_PR
+Spanish-Spain, es_ES
+Spanish-United States, es_US
+Spanish-Uruguay, es_UY
+Spanish-Venezuela, es_VE
+Sundanese, su
+Swahili, sw
+Swahili-Democratic Republic of the Congo, sw_CD
+Swahili-Kenya, sw_KE
+Swahili-Tanzania, sw_TZ
+Swahili-Uganda, sw_UG
+Swati, ss
+Swedish, sv
+Swedish-Finland, sv_FI
+Swedish-Sweden, sv_SE
+Tagalog, tl
+Tagalog-Philippines, tl_PH
+Tajik, tg
+Tajik-Tajikistan, tg_TJ
+Talossan, tzl
+Tamil, ta
+Tamil-India, ta_IN
+Tamil-Sri-Lanka, ta_LK
+Tatar, tt
+Telugu, te
+Telugu-India, te_IN
+Tetum-Tetun, tet
+Thai, th
+Thai-Thailand, th_TH
+Tibetan, bo
+Tibetan-China, bo_CN
+Tigrinya, ti
+Tok Pisin, tpi
+Tongan, to
+Tsimshian, tsi
+Tsonga, ts
+Tswana, tn
+Turkish, tr
+Turkish-Cyprus, tr_CY
+Turkish-Turkey, tr_TR
+Turkmen, tk
+Turkmen-Turkmenistan, tk_TM
+Tz’utujil, tzj
+Udmurt, udm
+Uighur, ug
+Uighur-Arabic, ug@Arab
+Uighur-Cyrillic, ug@Cyrl
+Uighur-Latin, ug@Latin
+Ukrainian, uk
+Ukrainian-Ukraine, uk_UA
+Upper Franconian, vmf
+Upper Sorbian, hsb
+Urdu, ur
+Urdu-Pakistan, ur_PK
+Uzbek, uz
+Uzbek-Arabic, uz@Arab
+Uzbek-Cyrillic, uz@Cyrl
+Uzbek-Latin, uz@Latn
+Uzbek-Uzbekistan, uz_UZ
+Venda, ve
+Venetian, vec
+Vepsian, vep
+Vietnamese, vi
+Vietnamese-Viet Nam, vi_VN
+Vlaams, vls
+Volapük, vo
+Walloon, wa
+Wáray-Wáray, war
+Welsh, cy
+Welsh-United Kingdom, cy_GB
+Western Frisian,fy
+Western Frisian-Netherlands, fy_NL
+Wolof, wo
+Wolof Senegal, wo_SN
+Xhosa, xh
+Yeshivish English, en@ysv
+Yiddish, yi
+Yoruba, yo
+Zulu, zu
+Zulu-South Africa, zu_ZA

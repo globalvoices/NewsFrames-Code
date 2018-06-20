@@ -29,7 +29,7 @@ class ProjectChecklist < ApplicationRecord
 
   translates :name
 
-  globalize_accessors :locales => [:eng], :attributes => [:name]
+  globalize_accessors :locales => [:en_US], :attributes => [:name]
 
   def progress
     return 0 if item_count == 0
@@ -61,7 +61,7 @@ class ProjectChecklist < ApplicationRecord
   end
 
   def with_translation_in_current_locale(fallback_locale='eng')
-    current_locale = ISO_639.find(I18n.locale.to_s).alpha3
+    current_locale = I18n.locale.to_s
     with_translation(current_locale, fallback_locale)
   end
 end
