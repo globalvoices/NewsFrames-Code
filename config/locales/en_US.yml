@@ -236,7 +236,7 @@ en_US:
         Into the textbox above:
         <ul>
         <li>enter a term to search within Media Cloud's U.S. Top 50 Online News collection during the past year, or</li>
-        <li>enter your own custom Media Cloud query by pasting its URL after a search <a target="_blank" href="https://explorer.mediacloud.org/">here</a></li>
+        <li>enter your own custom Media Cloud query by pasting its URL after a search <a target="_blank" href="https://explorer.mediacloud.org/">here</a> (you need to create a Media Cloud account to obtain the correct URL)</li>
         </ul>
       submit: "Submit"
       save: "Save"
