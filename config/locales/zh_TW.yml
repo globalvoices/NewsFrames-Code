@@ -57,7 +57,7 @@ zh_TW:
     welcome_user: "%{name}，歡迎"
     welcome_anonymous: "歡迎來到 NewsFrames ── %{link} 的一項倡議計畫"
     intro: |-
-        看看專題範例 ，或者著手建立自己的專題。
+        看看專題範例，或者著手建立自己的專題。
     read_more: "深入了解"
     read_more_cont: "NewsFrames 倡議。"
   menu:
@@ -178,11 +178,10 @@ zh_TW:
       information_message: |-
           在上面的欄位中貼入英文文字，然後點擊欄位下方的按鈕。
           查詢結果可以 CSV 檔案的形式下載，也可以 HTML 直接顯示。你可以參考
-          <a href="http://www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">這篇論文</a>和這個<a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">指南</a>，來進一步了解這些數字的意義。
+          <a href="www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">這篇論文</a>和這個<a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">指南</a>，來進一步了解這些數字的意義。
           <br><br>
           Bias Prism 是全球之聲與
-          <a href="http://www.socialai.gatech.edu/" target="_blank">喬治亞理工學院「行為模式與計算社會科學」［Behavioral Modeling and Computational Social Science］團隊</a>的合作成果，目前尚在試驗階段，我們仍在不斷研究、希望 Bias Prism 能越臻完善。
-          如果有任何疑問，請聯繫 NewsFrames 團隊。
+          <a href="http://www.socialai.gatech.edu/" target="_blank">喬治亞理工學院「行為模式與計算社會科學」［Behavioral Modeling and Computational Social Science］團隊</a>的合作成果，目前尚在試驗階段。我們仍在不斷研究、希望 Bias Prism 能越臻完善。如果有任何疑問，請聯繫 NewsFrames 團隊。
     media_cloud:
       heading: "Media Cloud"
       saved_searches: "儲存查詢參數"
@@ -193,8 +192,8 @@ zh_TW:
       instructions: |-
           在上面的欄位中：
           <ul>
-          <li>輸入關鍵字——以便在 Media Cloud 的資料庫中，查詢過去一年裡，全美 50 大網路新聞媒體的資料；或是</li>
-          <li>輸入你自訂的 Media Cloud 查詢參數——請先到<a target="_blank" href="https://explorer.mediacloud.org/">這裡</a>進行查詢，將查詢參數儲存為一專屬網址，再將此網址貼入</li>
+          <li>輸入關鍵字──以便在 Media Cloud 的資料庫中，查詢過去一年裡，全美 50 大網路新聞媒體的資料；或是</li>
+          <li>輸入你自訂的 Media Cloud 查詢參數──請先到<a target="_blank" href="https://explorer.mediacloud.org/">這裡</a>進行查詢，將查詢參數儲存為一專屬網址，再將此網址貼入</li>
           </ul>
       submit: "送出"
       save: "儲存"
