@@ -67,8 +67,14 @@ class MediaCloud
     uri = URI.parse(URI.encode(fragment))
     qs = Rack::Utils.parse_nested_query(uri.query)
     if qs['q'].present?
-      q = fix_unescaped_quotes(URI.unescape(qs['q']))
-      JSON.parse(q).map do |params|
+      q = URI.unescape(qs['q'])
+      parsed = begin
+        JSON.parse(q)
+      rescue JSON::ParserError => e
+        q = fix_unescaped_quotes(q)
+        JSON.parse(q)
+      end
+      parsed.map do |params|
         QueryParams.new(
           params['q'],
           {
