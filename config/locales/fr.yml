@@ -1,0 +1,217 @@
+fr:
+  locale_name: "Anglais"
+  attributes:
+    created_at: "Date de création"
+    updated_at: "Dernière modification"
+  activerecord:
+    models:
+      collaborator:
+        zero: "Collaborateurs"
+        one: "Collaborateur"
+        other: "Collaborateurs"
+      project:
+        zero: "Projets"
+        one: "Projet"
+        other: "Projets"
+      user:
+        zero: "Utilisateurs"
+        one: "Utilisateur"
+        other: "Utilisateurs"
+    attributes:
+      collaborator:
+        lead: "Chef de projet"
+      project:
+        name: "Nom"
+      query:
+        name: "Nom"
+      user:
+        admin: "Administrateur"
+        approved: "Validé"
+        email: "E-mail"
+        name: "Nom"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation mot de passe"
+        current_password: "Mot de passe actuel"
+        language: "Langue"
+        initials: "Initiales/pseudo"
+  date:
+    formats:
+      default: "%b %d %Y"
+      short: "%b %d"
+      long: "%B %d %Y"
+  time:
+    formats:
+      default: "%b %d %Y %H:%M"
+      short: "%b %d %H:%M"
+      long: "%A, %B %d %Y %H:%M"
+      time_only: "%H:%M"
+  general:
+    title: "Bienvenue sur Global Voices NewsFrames"
+    heading: "NewsFrames"
+    close: "Fermer"
+    toggle_navigation: "dérouler le menu"
+    loading: "Chargement..."
+    back: 'Retour'
+    update: 'Modifier'
+  landing:
+    welcome_user: "Bienvenue %{name}"
+    welcome_anonymous: "Bienvenue sur NewsFrames, un projet de %{link}"
+    intro: |-
+        Explorez les exemples de projets ou lancez-vous en créant le vôtre.
+    read_more: "En savoir plus"
+    read_more_cont: "A propos de NewsFrames"
+  menu:
+    home: "Accueil"
+    about: "A propos"
+    contact: "Contact"
+    projects: "Projets"
+    profile: "Profil"
+    sign_out: "Se déconnecter"
+    log_in: "Se connecter"
+    sign_up: "S'inscrire"
+    admin: "Administrateur"
+  mail:
+    greeting: "Cher, chère %{name}"
+    thanks: "Merci,"
+    from: "L'Equipe NewsFrames"
+    resource_link: "Une fois connecté, %{resource_name} est disponible sur : %{link}"
+    resource_names:
+      admin_dashboard: "le tableau de bord "
+      project: "le projet"
+    invite:
+      accept: "Vous pouvez accepter l'invitation en cliquant sur ce lien : %{link}"
+  collaborators:
+    manage:
+      heading: "Gérer les collaborateurs"
+      lead: "(chef de projet)"
+      you: "(Vous)"
+      confirm_delete: "Êtes-vous sûr ?"
+    invite:
+      heading: "Inviter des collaborateurs"
+      emails_placeholder: "Entrez plusieurs adresses séparées avec des espaces ou virgules"
+      submit_button: "Inviter"
+    mail:
+      invited: "Vous avez été invité-e à collaborer à ce projet de NewsFrames : %{name}"
+  projects:
+    index:
+      lead:
+        heading: "Mes projets"
+        empty_message: "Vous n'êtes responsable d'aucun projet"
+      shared:
+        heading: "Projets dont je suis membre"
+        empty_message: "Vous n'êtes actuellement membre d'aucun projet."
+      public:
+        heading: "Projets publics"
+      create_button: "Créer un projet"
+    edit:
+      heading: "Modifier un projet"
+    new:
+      heading: "Créer un projet"
+    show:
+      add_button: "+ Ajouter"
+      edit_button: "Modifier"
+      delete_button: "Supprimer"
+      delete_confirm: "Voulez-vous vraiment modifier/supprimer ?"
+      collaborators_button: "Collaborateurs"
+      tools:
+        media_cloud: 'Media Cloud'
+        bias_detector: 'Bias Prism'
+        meme_mapper: 'Meme Mapper'
+        checklist: 'Check-lists'
+    form:
+      name: "Nom"
+      public: "Public"
+      checklists: "Check-lists de projet"
+      zombie_checklist_message: "La check-list parent a été supprimée du système"
+      submit: "Envoyer"
+      cancel: "Annuler"
+      create: "Créer"
+    sidebar:
+      learn_more: "En savoir plus"
+      intro: |-
+          Dans ce projet de %{link}, nos collaborations utilisent les données pour explorer
+          comment le "cadrage" ou élaboration de la couverture de l'actualité peut affecter la façon
+          dont pense le monde.
+      links:
+      - url: https://newsframes.globalvoices.org/2017/02/09/why-the-news-frame-matters/
+        title: Qu'est-ce qu'un cadre (et pourquoi il est important)
+      - url: https://newsframes.globalvoices.org/tools/how-to/
+        title: Commencer un projet
+  project_pads:
+    new:
+      heading: "Créer un bloc-notes"
+    edit:
+      heading: "Modifier un bloc-note"
+  users:
+    profile:
+      need_current_password: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications"
+      leave_password_blank: "Laissez vide si vous ne voulez pas le modifier"
+      edit_profile_title: "Modifier l'utilisateur"
+    mail:
+      approved:
+        welcome: "Bienvenue dans notre collectif. Votre compte NewsFrames a été validé."
+        sign_in: "Vouspouvez commencer à utiliser NewsFrames en vous connectant ici %{link}."
+      admin:
+        invite: "Vous êtes invité-e à devenir administrateur NewsFrames."
+        notice: "Vous êtes maintenant un administrateur NewsFrames."
+      registered:
+        welcome: "Bienvenue à NewsFrames!"
+        approved: |-
+            Votre compte a été créé avec succès. Connectez-vous en vous rendant sur %{link}.
+        unapproved: |-
+            Votre compte a été créé avec succès, mais il doit encore être validé avant que vous commenciez à l'utiliser.
+            Nous avons informé l'administrateur système et vous recevrez un e-mail de confirmation dès validation de votre compte.
+  checklists:
+    list:
+      heading: 'Check-lists'
+      complete: 'complétés'
+      complete_across_team: 'complétés au sein de l''équipe'
+      submit_button: 'Envoyer'
+      run_report: 'Exécuter le rapport'
+  tools:
+    bias_detector:
+      heading: 'Bias Prism'
+      input_data: 'saisir les données'
+      input_data_placeholder: 'Entrer du texte ici pour inspection si biais'
+      submit_button: 'Exécuter Prism'
+      submit_button_table: 'Afficher le tableau'
+      submit_button_extended: 'Etendu'
+      submit_button_normalized: 'Normalisé'
+      information_message: |-
+          Collez le texte en anglais dans le cadre ci-dessus et cliquez sur le bouton.
+          Les résultats sont disponibles soit par fichiers CSV ou en affichage HTML. Pour mieux comprendre ces chiffres, lisez
+          <a href="http://www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">cet article</a> et ce <a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">guide</a>.
+          <br><br>
+          Cette fonctionnalité, une collaboration avec le
+          <a href="http://www.socialai.gatech.edu/" target="_blank">Groupe Modélisation comportementale et
+          systèmes sociaux computationnels de Georgia Tech</a>, est expérimentale et l'objet d'une recherche active.
+          Contactez l'équipe NewsFrames pour toute question.
+    media_cloud:
+      heading: "Media Cloud"
+      saved_searches: "Recherches sauvegardées"
+      edit: "Modifier"
+      delete: "Supprimer"
+      confirm: "Voulez-vous vraiment modifier/supprimer ?"
+      query_term: "Requête simple ou URL de la requête"
+      instructions: |-
+          Dans la zone de texte ci-dessus :
+          <ul>
+          <li>saissez un terme à rechercher dans la collection Media Cloud des 50 Top U.S. News en ligne de l'année passée, ou</li>
+          <li>saisissez votre requête personnalisée en collant son URL après une recherche <a target="_blank" href="https://explorer.mediacloud.org/">ici</a></li>
+          </ul>
+      submit: "Envoyer"
+      save: "Enregistrer"
+      save_search: "Sauvegarder la recherche"
+      fetching: "Extraction des données depuis Media Cloud..."
+      max_stories_notice: "Extraction maximum d'articles : 10.000"
+    meme_mapper:
+      heading: 'Meme Mapper'
+      saved_searches: 'Recherches sauvegardées'
+      delete: 'Supprimer'
+      image_url: 'URL de l''image'
+      submit: 'Envoyer'
+      fetching: 'Extraction...'
+      save: 'Enregistrer'
+      save_search: 'Sauvegarder la recherche'
+      instructions: |-
+          Entrer dans le champ de texte ci-dessus l'URL de l'image pour laquelle vous souhaitez faire une recherche d'image inversée. En savoir plus sur notre démarche Meme Mapping <a href="https://newsframes.globalvoices.org/tools/using-meme-mapper/">ici</a>.
