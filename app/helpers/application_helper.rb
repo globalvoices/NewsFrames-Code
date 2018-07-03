@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def available_languages
-    @available_languages ||= ISO_639::ISO_639_2.map(&:alpha3)
+    LANGUAGES.map(&:last)
   end
 
   def globalize(&block)
-    Globalize.with_locale(ISO_639.find(I18n.locale.to_s).alpha3) do
+    Globalize.with_locale(I18n.locale.to_s) do
       block.call
     end
   end
@@ -23,4 +23,3 @@ module ApplicationHelper
     end
   end
 end
-

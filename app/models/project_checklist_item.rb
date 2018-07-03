@@ -26,7 +26,7 @@ class ProjectChecklistItem < ApplicationRecord
 
   translates :item, :help
 
-  globalize_accessors :locales => [:eng], :attributes => [:item, :help]
+  globalize_accessors :locales => [:en_US], :attributes => [:item, :help]
 
   def check!
     self.checked = true
@@ -49,16 +49,16 @@ class ProjectChecklistItem < ApplicationRecord
     self.translations.where(locale: fallback_locale).first
   end
 
-  def with_translation_in_current_locale(fallback_locale='eng')
-    current_locale = ISO_639.find(I18n.locale.to_s).alpha3
+  def with_translation_in_current_locale(fallback_locale='en_US')
+    current_locale = I18n.locale.to_s
     with_translation(current_locale, fallback_locale)
   end
 
-  def item_with_translation_in_current_locale(fallback_locale='eng')
+  def item_with_translation_in_current_locale(fallback_locale='en_US')
     attr_with_translation_in_current_locale(:item, fallback_locale)
   end
 
-  def help_with_translation_in_current_locale(fallback_locale='eng')
+  def help_with_translation_in_current_locale(fallback_locale='en_US')
     attr_with_translation_in_current_locale(:help, fallback_locale)
   end
 
@@ -69,5 +69,5 @@ class ProjectChecklistItem < ApplicationRecord
     return nil unless translation.present?
     translation[attrsym]
   end
-  
+
 end

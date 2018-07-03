@@ -36,7 +36,7 @@ class MediaCloud
     end
 
     def solr_q
-      "sentence:#{keywords}"
+      keywords
     end
 
     def solr_fq
@@ -67,7 +67,14 @@ class MediaCloud
     uri = URI.parse(URI.encode(fragment))
     qs = Rack::Utils.parse_nested_query(uri.query)
     if qs['q'].present?
-      JSON.parse(URI.unescape(qs['q'])).map do |params|
+      q = URI.unescape(qs['q'])
+      parsed = begin
+        JSON.parse(q)
+      rescue JSON::ParserError => e
+        q = fix_unescaped_quotes(q)
+        JSON.parse(q)
+      end
+      parsed.map do |params|
         QueryParams.new(
           params['q'],
           {
@@ -96,5 +103,16 @@ class MediaCloud
   def get(path, query = {})
     query[:key] ||= @api_key
     self.class.get(path, { query: query })
+  end
+
+  private
+
+  def self.fix_unescaped_quotes(str)
+    # Noticed that some MC queries contained malformed JSON (unescaped quotes)
+    # i.e. { "foo": ""bar"" } instead of { "foo": "\"bar\"" }
+    # This tries to workaround that until it is fixed in MC
+    str
+      .gsub(/:(\s*)\"(\s*)\"/) { ":#{$1}\"#{$2}\\\"" }
+      .gsub(/\"(\s*)\"(\s*),/) { "\\\"#{$1}\"#{$2}," }
   end
 end

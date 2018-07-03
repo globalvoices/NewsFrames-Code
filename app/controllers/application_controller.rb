@@ -12,10 +12,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_locale
-    if current_user.present?
+  def set_locale(user = nil)
+    user ||= current_user
+    if user.present?
       begin
-        I18n.locale = ISO_639.find(current_user.language).try(:alpha2) || I18n.default_locale
+        I18n.locale = user.language || I18n.default_locale
       rescue I18n::InvalidLocale
         I18n.locale = I18n.default_locale
       end

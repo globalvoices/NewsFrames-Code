@@ -19,7 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+en_US:
   locale_name: "English"
 
   # Rails
@@ -59,6 +59,7 @@ en:
         password_confirmation: "Password confirmation"
         current_password: "Current Password"
         language: "Language"
+        initials: "Initials/nickname"
 
   date:
     formats:
@@ -203,6 +204,7 @@ en:
       complete: 'complete'
       complete_across_team: 'complete across team'
       submit_button: 'Submit'
+      run_report: 'Run report'
 
   tools:
     bias_detector:
@@ -216,7 +218,7 @@ en:
       information_message: |-
         Paste english-language text in the above box and click the button.
         The results are available either via CSV files or an HTML display. You can understand more about these numbers through
-        <a href="www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">this paper</a> and this <a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">guide</a>.
+        <a href="http://www.thinkmind.org/download.php?articleid=huso_2015_2_30_70077" target="_blank">this paper</a> and this <a href="https://newsframes.globalvoices.org/tools/using-bias-prism-in-newsframes/">guide</a>.
         <br><br>
         This functionality, a collaboration with
         <a href="http://www.socialai.gatech.edu/" target="_blank">Georgia Tech's Behavioral Modeling and
@@ -234,7 +236,7 @@ en:
         Into the textbox above:
         <ul>
         <li>enter a term to search within Media Cloud's U.S. Top 50 Online News collection during the past year, or</li>
-        <li>enter your own custom Media Cloud query by pasting its URL after a search <a target="_blank" href="https://explorer.mediacloud.org/">here</a></li>
+        <li>enter your own custom Media Cloud query by pasting its URL after a search <a target="_blank" href="https://explorer.mediacloud.org/">here</a> (you need to create a Media Cloud account to obtain the correct URL)</li>
         </ul>
       submit: "Submit"
       save: "Save"
@@ -251,3 +253,5 @@ en:
       fetching: 'Fetching...'
       save: 'Save'
       save_search: 'Save Search'
+      instructions: |-
+        Into the textbox above, enter the URL of an image you would like to reverse image search. Learn more about our Meme Mapping effort <a href="https://newsframes.globalvoices.org/tools/using-meme-mapper/">here</a>.

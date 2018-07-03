@@ -75,7 +75,7 @@ module Projects
   end
 
   class Checklists
-    
+
     def self.call(params)
       project = params[:project]
       raise ArgumentError, 'missing project' unless project.present?
@@ -88,11 +88,11 @@ module Projects
       checklists_csv(project)
     end
 
-    private 
+    private
 
     def self.checklists_csv(project)
-      
-      Globalize.with_locale :eng do
+
+      Globalize.with_locale :en_US do
         CSV.generate(force_quotes: true) do |csv|
           csv << ["collaborator", "checklist", "item", "checked"]
           project.checklists.each do |project_checklist|

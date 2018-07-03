@@ -41,13 +41,13 @@ class ProjectForm < ApplicationForm
   def initialize_from_global_checklists
     Checklist.all.each do |checklist|
       translated_checklist = checklist.with_translation_in_current_locale
-      presenter = ChecklistPresenter.new(checklist.id, 
-                                         translated_checklist.name, 
-                                         translated_checklist.name, 
+      presenter = ChecklistPresenter.new(checklist.id,
+                                         translated_checklist.name,
+                                         translated_checklist.name,
                                          checklist.enabled,
                                          false,
                                          checklist.created_at)
-      
+
       self.global_checklists.push(presenter)
       self.checklist_presenters[checklist.id] = presenter
       checklist_items[checklist.id] = []
@@ -63,8 +63,8 @@ class ProjectForm < ApplicationForm
       translated_checklist = checklist.with_translation_in_current_locale
 
       if checklist.global_checklist.present?
-        self.selected_checklists.push(checklist.global_checklist.id)        
-        
+        self.selected_checklists.push(checklist.global_checklist.id)
+
         if self.checklist_presenters[checklist.global_checklist.id].present?
           self.checklist_presenters[checklist.global_checklist.id].name = translated_checklist.name
           self.checklist_presenters[checklist.global_checklist.id].attached = true

@@ -1,0 +1,8 @@
+#progress_modal {
+  position: fixed;
+  left: 40%;
+  top: 50%;
+  display: none;
+  z-index:999999;
+  max-height:600px;
+}

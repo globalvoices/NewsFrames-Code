@@ -18,12 +18,12 @@ describe Checklists do
       checklist = described_class.(name: name, items: items)
 
       expect(checklist).to be
-      expect(checklist.name_eng).to eq name
+      expect(checklist.name_en_us).to eq name
       expect(checklist.items.length).to eq 2
-      expect(checklist.items[0].item_eng).to eq items[0][:item]
-      expect(checklist.items[0].help_eng).to eq items[0][:help]
-      expect(checklist.items[1].item_eng).to eq items[1][:item]
-      expect(checklist.items[1].help_eng).to_not be
+      expect(checklist.items[0].item_en_us).to eq items[0][:item]
+      expect(checklist.items[0].help_en_us).to eq items[0][:help]
+      expect(checklist.items[1].item_en_us).to eq items[1][:item]
+      expect(checklist.items[1].help_en_us).to_not be
     end
   end
 
@@ -37,18 +37,18 @@ describe Checklists do
       checklist = create_checklist_english
       checklist_item = checklist.items[0]
       checklist_item_count = checklist.items.length
-      old_name = checklist.name_eng
+      old_name = checklist.name_en_us
       new_name = old_name + Faker::Lorem.word
 
       updated_checklist = described_class.(name: new_name, checklist: checklist)
 
       expect(updated_checklist.id).to eq checklist.id
-      expect(updated_checklist.name_eng).to eq new_name
-      expect(updated_checklist.name_eng).to_not eq old_name
+      expect(updated_checklist.name_en_us).to eq new_name
+      expect(updated_checklist.name_en_us).to_not eq old_name
       expect(updated_checklist.items.length).to eq checklist_item_count
       expect(updated_checklist.items[0].id).to eq checklist_item.id
-      expect(updated_checklist.items[0].item_eng).to eq checklist_item.item_eng
-      expect(updated_checklist.items[0].help_eng).to eq checklist_item.help_eng
+      expect(updated_checklist.items[0].item_en_us).to eq checklist_item.item_en_us
+      expect(updated_checklist.items[0].help_en_us).to eq checklist_item.help_en_us
     end
   end
 
@@ -100,9 +100,9 @@ describe Checklists do
     let!(:name) { Faker::Lorem.word }
     let!(:language) { :fre.to_s }
     let!(:items) { [{ item: Faker::Lorem.sentence, help: Faker::Lorem.sentence },
-                    { item: Faker::Lorem.sentence, help: nil }] } 
+                    { item: Faker::Lorem.sentence, help: nil }] }
     let!(:other_language) { :esp.to_s }
-    
+
     before do
       Checklists::AddTranslation.(checklist: checklist, name: name, items: items, language: language)
     end
@@ -118,7 +118,7 @@ describe Checklists do
     end
 
     it 'updates the name of the checklist translation' do
-      old_eng_name = checklist.name_eng
+      old_eng_name = checklist.name_en_us
       old_name = checklist.with_translation(language).name
       new_name = old_name + Faker::Lorem.word
       checklist_item_count = checklist.items.length
@@ -126,25 +126,25 @@ describe Checklists do
       updated_checklist = described_class.(name: new_name, checklist: checklist, language: language)
 
       expect(updated_checklist.id).to eq checklist.id
-      expect(updated_checklist.name_eng).to eq old_eng_name
+      expect(updated_checklist.name_en_us).to eq old_eng_name
       expect(updated_checklist.with_translation(language).name).to eq new_name
-      
+
       expect(updated_checklist.items.length).to eq checklist_item_count
-      
+
       expect(updated_checklist.items[0].id).to eq checklist_item_1.id
-      expect(updated_checklist.items[0].item_eng).to eq checklist_item_1.item_eng
-      expect(updated_checklist.items[0].help_eng).to eq checklist_item_1.help_eng
-      
+      expect(updated_checklist.items[0].item_en_us).to eq checklist_item_1.item_en_us
+      expect(updated_checklist.items[0].help_en_us).to eq checklist_item_1.help_en_us
+
       expect(updated_checklist.items[1].id).to eq checklist_item_2.id
-      expect(updated_checklist.items[1].item_eng).to eq checklist_item_2.item_eng
-      expect(updated_checklist.items[1].help_eng).to eq checklist_item_2.help_eng
-      
+      expect(updated_checklist.items[1].item_en_us).to eq checklist_item_2.item_en_us
+      expect(updated_checklist.items[1].help_en_us).to eq checklist_item_2.help_en_us
+
       expect(updated_checklist.items[0].with_translation(language).item).to eq items[0][:item]
       expect(updated_checklist.items[0].with_translation(language).help).to eq items[0][:help]
-      
+
       expect(updated_checklist.items[1].with_translation(language).item).to eq items[1][:item]
       expect(updated_checklist.items[1].with_translation(language).help).to eq items[1][:help]
-      
+
     end
   end
 
@@ -157,14 +157,14 @@ describe Checklists do
     let!(:language) { :fre.to_s }
     let!(:other_language) { :esp.to_s }
     let!(:items) { [{ item: Faker::Lorem.sentence, help: Faker::Lorem.sentence },
-                    { item: Faker::Lorem.sentence, help: nil }] } 
+                    { item: Faker::Lorem.sentence, help: nil }] }
     let!(:other_items) { [{ item: Faker::Lorem.sentence, help: Faker::Lorem.sentence },
-                          { item: Faker::Lorem.sentence, help: nil }] } 
+                          { item: Faker::Lorem.sentence, help: nil }] }
     before do
       Checklists::AddTranslation.(checklist: checklist, name: name, items: items, language: language)
       Checklists::AddTranslation.(checklist: checklist, name: other_name, items: other_items, language: other_language)
     end
-    
+
     it 'raises error if required parameters are not provided' do
       expect { described_class.(checklist: checklist, language: language) }.not_to raise_error
       expect { described_class.(checklist: nil, language: language) }.to raise_error ArgumentError
@@ -177,7 +177,7 @@ describe Checklists do
 
     it 'removes translation in specified language' do
       described_class.(checklist: checklist, language: language)
-      
+
       expect(checklist.with_translation(language)).to_not be
       expect(checklist.with_translation(other_language)).to be
 
@@ -209,9 +209,9 @@ describe Checklists do
 
     context 'disabled checklist' do
       let!(:checklist) { create_checklist_english }
-      
-      before do 
-        Globalize.with_locale :eng do
+
+      before do
+        Globalize.with_locale :en_US do
           checklist.enabled = false
           checklist.save!
         end
@@ -235,9 +235,9 @@ describe Checklists do
 
     context 'disabled checklist' do
       let!(:checklist) { create_checklist_english }
-      
-      before do 
-        Globalize.with_locale :eng do
+
+      before do
+        Globalize.with_locale :en_US do
           checklist.enabled = false
           checklist.save!
         end

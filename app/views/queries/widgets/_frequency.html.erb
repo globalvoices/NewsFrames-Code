@@ -7,6 +7,46 @@
      form.submit();
    });
  });
+
+ function sendMessageToEtherpad(message, args) {
+   var etherpadDomain = "<%= ENV['ETHERPAD_URL'] %>"; 
+   var message = JSON.stringify({method: message, args: args}); 
+   $("#epframeetherpad")[0].contentWindow.postMessage(message, etherpadDomain);
+ }
+
+ function addImageInEtherpad(imageUrl) {
+   sendMessageToEtherpad('addImage', imageUrl);
+ }
+
+ function showProgressBarInEtherpad() {
+   sendMessageToEtherpad('show_progress_bar', null);
+ }
+
+ function hideProgressBarInEtherpad() {
+   sendMessageToEtherpad('hide_progress_bar', null);
+ }
+
+ function addMCResultToPad() {
+   var node = $('#mc_result_frequency_small_table');
+   if (!node || !node.is(":visible")) {
+     node = $('#mc_result_frequency_large_table');
+   }
+
+   if (node && node.is(":visible")) node = node[0];
+   else return;
+
+   showProgressBarInEtherpad();
+
+   domtoimage.toPng(node)
+   .then(function (dataUrl) { 
+     addImageInEtherpad(dataUrl);
+     hideProgressBarInEtherpad();
+   })
+   .catch(function (error) { 
+     console.error("oops, something went wrong!", error); 
+   });
+ }
+
 </script>
 
 <div class="well">
@@ -21,6 +61,7 @@
         <% for name, index in presenter.frequency_options %>
           <li><%= link_to "Download #{name} data CSV", project_query_path(project, query, filter: { frequency: index }, format: :csv) %></li>
         <% end %>
+        <li><%= link_to "Add to pad", '#', onClick: 'javascript:addMCResultToPad();' %></li>
       </ul>
     </div>
   </div>
@@ -50,7 +91,11 @@
     <% end %>
   <% end %>
 
-  <table class="table frequency-table frequency-table-stacked margin-reset">
+<% if defined?(large_window) && large_window %>
+  <table class="table frequency-table frequency-table-stacked margin-reset" id="mc_result_frequency_large_table">
+<% else %>
+  <table class="table frequency-table frequency-table-stacked margin-reset" id="mc_result_frequency_small_table">
+<% end %>
     <tbody>
       <tr>
         <td>

@@ -1,6 +1,6 @@
 <%= render 'show', checklist: @checklist %>
 <%= form_tag(upload_translation_admin_checklist_path(id: @checklist.id), method: :post, multipart: true) do %>
-  <label>Checklist Name: <%= @checklist.name_eng %></label>
+  <label>Checklist Name: <%= @checklist.name_en_us %></label>
   <p/>
   <label for="language">Select Language</label> <%= select_tag :language, options_for_select(available_languages_san_en) %>
   <p/>

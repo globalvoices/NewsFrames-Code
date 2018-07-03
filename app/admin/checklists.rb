@@ -23,17 +23,17 @@ ActiveAdmin.register Checklist do
     column :name do |list|
       list.with_translation_in_current_locale.name
     end
-    
+
     column :items do |list|
       list.items.length
     end
 
     column :enabled do |list|
       if list.enabled?
-        link_to 'Disable', disable_admin_checklist_path(list), 
+        link_to 'Disable', disable_admin_checklist_path(list),
                 method: :post, data: { confirm: 'Are you sure you want to disable the checklist?' }
       else
-        link_to 'Enable', enable_admin_checklist_path(list), 
+        link_to 'Enable', enable_admin_checklist_path(list),
                 method: :post, data: { confirm: 'Are you sure you want to enable the checklist?' }
       end
     end
@@ -42,7 +42,7 @@ ActiveAdmin.register Checklist do
   end
 
   show do
-    Globalize.with_locale :eng do
+    Globalize.with_locale :en_US do
       render 'show', checklist: resource
     end
   end
@@ -77,7 +77,7 @@ ActiveAdmin.register Checklist do
     begin
       items = parse_checklist_csv(params)
       Checklists::Create.(name: params[:name], items: items)
-      redirect_to :action => :index, :notice => "Checklist imported successfully."  
+      redirect_to :action => :index, :notice => "Checklist imported successfully."
     rescue
       flash[:error] = 'Checklist could not be imported. Please check the format.'
       redirect_to upload_checklist_admin_checklists_path
@@ -86,7 +86,7 @@ ActiveAdmin.register Checklist do
 
   member_action :edit_checklist, :method => :get do
     authorize(resource)
-    Globalize.with_locale :eng do
+    Globalize.with_locale :en_US do
       @checklist = Checklist.find(params[:id])
       render 'overwrite'
     end
@@ -110,7 +110,7 @@ ActiveAdmin.register Checklist do
 
   member_action :add_translation, :method => :get do
     authorize(resource)
-    Globalize.with_locale :eng do
+    Globalize.with_locale :en_US do
       @checklist = Checklist.find(params[:id])
       render 'upload_translation'
     end
@@ -148,7 +148,7 @@ ActiveAdmin.register Checklist do
 
     @checklist_items = @original_checklist.items.map { |entry| entry.with_translation(params[:language].to_sym) }
     @checklist = @original_checklist.with_translation(params[:language].to_sym)
-    
+
     render 'overwrite_translation'
   end
 
@@ -184,7 +184,7 @@ ActiveAdmin.register Checklist do
 
   member_action :remove_translation, :method => :delete do
     authorize(resource)
-    
+
     Checklists::RemoveTranslation.(checklist: resource, language: params[:language].to_sym)
     redirect_to admin_checklist_path(id: resource.id), notice: 'Translation removed successfully'
   end
@@ -202,7 +202,7 @@ ActiveAdmin.register Checklist do
   end
 
   controller do
-    
+
     def parse_checklist_csv(params)
       csv_data = params[:file]
       csv_file = csv_data.read

@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 describe ProjectChecklists do
-  
+
   describe described_class::Associate do
-    
+
     it 'raises error if required parameters are not provided' do
       expect { described_class.(project: nil, checklist: create_checklist_english) }.to raise_error ArgumentError
       expect { described_class.(project: create(:project), checklists: nil) }.not_to raise_error
-      expect { described_class.(project: create(:project), checklists: []) }.not_to raise_error 
+      expect { described_class.(project: create(:project), checklists: []) }.not_to raise_error
       expect { described_class.(project: create(:project)) }.not_to raise_error
     end
 
@@ -15,9 +15,9 @@ describe ProjectChecklists do
       checklist_1 = create_checklist_english
       checklist_2 = create_checklist_english
       checklist_3 = create_checklist_english
-      
+
       project = create(:project)
-      
+
       expect(project.checklists.length).to eq 0
 
       described_class.(project: project, checklists: [checklist_1, checklist_2])
@@ -31,7 +31,7 @@ describe ProjectChecklists do
 
     it 'removes existing checklists from project' do
       project = create(:project)
-      
+
       checklist_1 = create_checklist_english
       checklist_2 = create_checklist_english
       checklist_3 = create_checklist_english
@@ -42,20 +42,20 @@ describe ProjectChecklists do
       expect(project.checklists.length).to eq 2
       expect(project.has_checklist?(checklist_1)).to eq true
       expect(project.has_checklist?(checklist_2)).to eq true
-      expect(project.has_checklist?(checklist_3)).to eq false      
+      expect(project.has_checklist?(checklist_3)).to eq false
 
       described_class.(project: project, checklists: [checklist_1])
       project.reload
 
       expect(project.checklists.length).to eq 1
       expect(project.has_checklist?(checklist_1)).to eq true
-      expect(project.has_checklist?(checklist_2)).to eq false  
-      expect(project.has_checklist?(checklist_3)).to eq false        
+      expect(project.has_checklist?(checklist_2)).to eq false
+      expect(project.has_checklist?(checklist_3)).to eq false
     end
 
     it 'removes all checklists from project' do
       project = create(:project)
-      
+
       checklist_1 = create_checklist_english
       checklist_2 = create_checklist_english
       checklist_3 = create_checklist_english
@@ -66,20 +66,20 @@ describe ProjectChecklists do
       expect(project.checklists.length).to eq 2
       expect(project.has_checklist?(checklist_1)).to eq true
       expect(project.has_checklist?(checklist_2)).to eq true
-      expect(project.has_checklist?(checklist_3)).to eq false      
+      expect(project.has_checklist?(checklist_3)).to eq false
 
       described_class.(project: project)
       project.reload
 
       expect(project.checklists.length).to eq 0
       expect(project.has_checklist?(checklist_1)).to eq false
-      expect(project.has_checklist?(checklist_2)).to eq false  
+      expect(project.has_checklist?(checklist_2)).to eq false
       expect(project.has_checklist?(checklist_3)).to eq false
     end
 
     it 'adds new checklists and removes existing checklists from project' do
       project = create(:project)
-      
+
       checklist_1 = create_checklist_english
       checklist_2 = create_checklist_english
       checklist_3 = create_checklist_english
@@ -90,14 +90,14 @@ describe ProjectChecklists do
       expect(project.checklists.length).to eq 2
       expect(project.has_checklist?(checklist_1)).to eq true
       expect(project.has_checklist?(checklist_2)).to eq true
-      expect(project.has_checklist?(checklist_3)).to eq false      
+      expect(project.has_checklist?(checklist_3)).to eq false
 
       described_class.(project: project, checklists: [checklist_3])
       project.reload
 
       expect(project.checklists.length).to eq 1
       expect(project.has_checklist?(checklist_1)).to eq false
-      expect(project.has_checklist?(checklist_2)).to eq false  
+      expect(project.has_checklist?(checklist_2)).to eq false
       expect(project.has_checklist?(checklist_3)).to eq true
     end
 
@@ -105,7 +105,7 @@ describe ProjectChecklists do
       project = create(:project)
       checklist_1 = create_checklist_english
       checklist_2 = create_checklist_english
-      
+
       project_checklist_1 = create_project_checklist_english(project, checklist_1)
       expect(project.checklists.length).to eq 1
       checklist_1.destroy!
@@ -120,7 +120,7 @@ describe ProjectChecklists do
       project = create(:project)
       checklist_1 = create_checklist_english
       checklist_2 = create_checklist_english
-      
+
       project_checklist_1 = create_project_checklist_english(project, checklist_1)
       expect(project.checklists.length).to eq 1
       checklist_1.destroy!
@@ -142,7 +142,7 @@ describe ProjectChecklists do
       project = create(:project)
       chklst = create_checklist_english
       proj_chklst = create_project_checklist_english(project, chklst)
-      
+
       expect(project.checklists.length).to eq 1
       expect(project.checklists[0].id).to eq proj_chklst.id
 
@@ -166,12 +166,12 @@ describe ProjectChecklists do
       expect(project.checklists.length).to eq 1
       expect(project.checklists.first).to eq proj_chklst
       expect(project.checklists.first.global_checklist).to eq chklst
-      expect(project.checklists.first.name_eng).to eq chklst.name_eng
+      expect(project.checklists.first.name_en_us).to eq chklst.name_en_us
       expect(project.checklists.first.items.length).to eq chklst.items.length
-      expect(project.checklists.first.items.first.item_eng).to eq chklst.items[0].item_eng
-      expect(project.checklists.first.items.first.help_eng).to eq chklst.items[0].help_eng
-      expect(project.checklists.first.items.last.item_eng).to eq chklst.items[1].item_eng
-      expect(project.checklists.first.items.last.help_eng).to eq chklst.items[1].help_eng
+      expect(project.checklists.first.items.first.item_en_us).to eq chklst.items[0].item_en_us
+      expect(project.checklists.first.items.first.help_en_us).to eq chklst.items[0].help_en_us
+      expect(project.checklists.first.items.last.item_en_us).to eq chklst.items[1].item_en_us
+      expect(project.checklists.first.items.last.help_en_us).to eq chklst.items[1].help_en_us
     end
   end
 
